@@ -4,7 +4,9 @@
   "description": "dashboard",
   "main": "index.js",
   "scripts": {
+    "watch:sass": "node-sass sass/admin.scss dist/css/style.css -w",
     "test": "echo \"Error: no test specified\" && exit 1"
+
   },
   "repository": {
     "type": "git",
@@ -14,5 +16,10 @@
     "dash"
   ],
   "author": "Eric Coetzee",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^6.0.1",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^9.0.1"
+  }
 }
