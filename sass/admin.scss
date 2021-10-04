@@ -5,6 +5,15 @@
 
 @import './base/base';
 @import './base/typography';
+
+@import './composition/buttons';
+@import './composition/_cards';
+@import './composition/_nav';
+@import './composition/new_customer_cards';
+@import './composition/_search';
+@import './composition/table';
+@import './composition/_topbar';
+@import './composition/_user_img';
   
 @import './layout/admin'; 
 

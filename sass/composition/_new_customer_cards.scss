@@ -1,0 +1,45 @@
+.details {
+    &__recent-connections {
+        &__table__row__data__img-box {
+            position: relative;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+            background-color: var(--color-secondary);
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        &__table {
+            // height: 100%;
+            &__row {
+                
+                &__data {
+                    padding: 1.2rem 1rem;
+                    h4 {
+                        font-size: 1.6rem;
+                        font-weight: 500;
+                    }
+                    span {
+                        display: block;
+                        font-size: 1.4rem;
+                        color: var(--color-dark-2);
+                    }
+                }
+                &:hover {
+                    background-color: var(--color-secondary);
+                    color: var(--color-light-1);
+                     & span{
+                        color: var(--color-light-1);
+                     }
+                }
+            }
+        }
+    }
+}

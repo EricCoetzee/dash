@@ -1,0 +1,49 @@
+.card-box{
+    position: relative;
+    width: 100%;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 3rem;
+
+    &__card{
+        position: relative;
+        background-color: var(--color-light-1);
+        padding: 3rem;
+        box-shadow: 0 0.7rem 2.5rem rgba($color: #000, $alpha: 0.08);
+        display: flex;
+        justify-content: space-between;
+        border-radius: 2rem;
+        cursor: pointer;
+        &__info{
+            &--number{
+                position: relative;
+                font-weight: 500;
+                font-size: 4rem;
+                color: var(--color-secondary);
+            }
+            &--name{
+                color: var(--color-dark-1);
+                font-size: 1.8rem;
+            }
+            &--icon{
+                .icon-icon{
+                    font-size: 4.8rem;
+                    color: var(--color-dark-2);
+    
+                }
+            }
+        }
+        
+        &:hover {
+            background-color: var(--color-secondary);
+        }
+
+        &:hover &__info{
+            &--number, &--name, &--icon>.icon-icon {
+                color: var(--color-light-1);
+            }
+        }
+    }
+    
+}
