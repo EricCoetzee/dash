@@ -1,6 +1,6 @@
 <div class="card-box">
     <?php
-    
+
     $db = new Database();
     $getRows = $db->getRows("SELECT DISTINCT type FROM user_status");
     foreach ($getRows as $row) {
@@ -12,7 +12,7 @@
                     $status_count = $row['type'];
                     $db = new Database();
                     $getRer = $db->getRows("SELECT * FROM user_status WHERE type = '$status_count'");
-                     echo count($getRer); ?>
+                    echo count($getRer); ?>
                 </div>
                 <div class="card-box__card__info--name">
                     <?php echo ucfirst($row['type']); ?>
@@ -20,8 +20,19 @@
             </div>
             <div class="card-box__card__info--icon">
 
-                
-                <ion-icon class="icon-icon" name="eye-outline"></ion-icon>
+                <?php
+                if ($row['type'] === 'daily views') { ?>
+                    <ion-icon class="icon-icon" name="eye-outline"></ion-icon>
+                <?php
+                } elseif ($row['type'] === 'comment') { ?>
+                    <ion-icon class="icon-icon" name="comments-outline"></ion-icon>
+                <?php
+                } elseif ($row['type'] === 'daily views') {
+                } elseif ($row['type'] === 'daily views') {
+                }
+
+                ?>
+
             </div>
         </div>
 

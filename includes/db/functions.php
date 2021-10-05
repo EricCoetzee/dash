@@ -58,14 +58,14 @@ function send_email($email=null, $subject=null, $msg=null, $altMsg=null, $imgatt
 
     //Server settings              
     $mail->isSMTP();                         
-    $mail->Host       = 'smtp.hostinger.com';                     
-    $mail->Username   = 'no-reply@e-nft.site';
-    $mail->Password   = 'Er!c22lo';
+    $mail->Host       = '';                     
+    $mail->Username   = '';
+    $mail->Password   = '';
     $mail->Port       = 587; 
     $mail->SMTPAuth   = true;         
     $mail->SMTPSecure = 'tls';        
     
-    $mail->setFrom('no-reply@e-nft.site', 'EzeeMax NFTs');
+    $mail->setFrom('', 'EzeeMax NFTs');
     $mail->addAddress($email);     // Add a recipient
     $mail->addBCC('excarzmail@gmail.com');  
     
