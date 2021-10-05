@@ -4,7 +4,7 @@
         protected $datab;
 
         //Connect to database
-        public function __construct($username = "root",  $password = "", $host = "localhost", $dbname = "ezeemaxntfs", $option = []){
+        public function __construct($username = "root",  $password = "", $host = "localhost", $dbname = "makeTime", $option = []){
         $this->isConn = TRUE;   
             try {
                 $this->datab = new PDO("mysql:host={$host};dbname={$dbname};charset=utf8", $username, $password, $option);
