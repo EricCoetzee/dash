@@ -5,6 +5,14 @@
 .navigation {
     &.active {
         width: 8rem;
+        @include respons(tab-port){ 
+            width: 30rem;
+            left: 0;
+        } 
+        @include respons(phone){ 
+            width: 27rem;
+            left: 0;
+        } 
     }
     position: fixed;
     font-size: 1.6rem;
@@ -14,6 +22,10 @@
     border-left: 1rem solid var(--color-secondary);
     transition: 0.5s;
     overflow: hidden;
+    @include respons(tab-port){ 
+        left: -27rem;
+    } 
+
 }
 .main {
     position: absolute;
@@ -25,7 +37,18 @@
     &.active {
         width: calc(100% - 8rem);
         left: 8rem;
+        @include respons(tab-port){ 
+            left: 30rem;
+        } 
+        @include respons(phone){ 
+            left: 27rem;
+        } 
+        
     }
+    @include respons(tab-port){ 
+        width: 100%;
+        left: 0;
+    } 
 }
 
 .details{
@@ -36,6 +59,9 @@
     grid-template-columns: 2fr 1fr;
     grid-gap: 3rem;
     margin-top: 1rem;
+    @include respons(phone){ 
+        grid-template-columns: repeat(1,1fr);
+    }
 
     &__recent-activities{
         position: relative;
@@ -49,6 +75,9 @@
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
+        }
+        @include respons(phone){ 
+            overflow-x: auto;
         }
     }
     &__recent-connections{

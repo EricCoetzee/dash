@@ -6,79 +6,25 @@
     <table class="details__recent-activities__table">
         <thead class="details__recent-activities__table__head">
             <tr class="details__recent-activities__table__head__row">
-                <td class="td details__recent-activities__table__head__row--heading">Name</td>
+                <td class="td details__recent-activities__table__head__row--heading">Title</td>
                 <td class="td details__recent-activities__table__head__row--heading">Likes</td>
                 <td class="td details__recent-activities__table__head__row--heading">Comments</td>
                 <td class="td details__recent-activities__table__head__row--heading">Status</td>
             </tr>
         </thead>
         <tbody class="details__recent-activities__table__body">
-            <tr class="details__recent-activities__table__body__row">
-                <td class="td details__recent-activities__table__body__row--info">Item 1</td>
-                <td class="td details__recent-activities__table__body__row--info">Item 2</td>
-                <td class="td details__recent-activities__table__body__row--info">Item 3</td>
-                <td class="td details__recent-activities__table__body__row--info"><span class="status pending">Item 4</span></td>
-            </tr>
-            <tr class="details__recent-activities__table__body__row">
-                <td class="td details__recent-activities__table__body__row--info">Item 1</td>
-                <td class="td details__recent-activities__table__body__row--info">Item 2</td>
-                <td class="td details__recent-activities__table__body__row--info">Item 3</td>
-                <td class="td details__recent-activities__table__body__row--info"><span class="status delivered">Item 4</span></td>
-            </tr>
-            <tr class="details__recent-activities__table__body__row">
-                <td class="td details__recent-activities__table__body__row--info">Item 1</td>
-                <td class="td details__recent-activities__table__body__row--info">Item 2</td>
-                <td class="td details__recent-activities__table__body__row--info">Item 3</td>
-                <td class="td details__recent-activities__table__body__row--info"><span class="status inprogress">Item 4</span></td>
-            </tr>
-            <tr class="details__recent-activities__table__body__row">
-                <td class="td details__recent-activities__table__body__row--info">Item 1</td>
-                <td class="td details__recent-activities__table__body__row--info">Item 2</td>
-                <td class="td details__recent-activities__table__body__row--info">Item 3</td>
-                <td class="td details__recent-activities__table__body__row--info"><span class="status returned">Item 4</span></td>
-            </tr>
-            <tr class="details__recent-activities__table__body__row">
-                <td class="td details__recent-activities__table__body__row--info">Item 1</td>
-                <td class="td details__recent-activities__table__body__row--info">Item 2</td>
-                <td class="td details__recent-activities__table__body__row--info">Item 3</td>
-                <td class="td details__recent-activities__table__body__row--info"><span class="status inprogress">Item 4</span></td>
-            </tr>
-            <tr class="details__recent-activities__table__body__row">
-                <td class="td details__recent-activities__table__body__row--info">Item 1</td>
-                <td class="td details__recent-activities__table__body__row--info">Item 2</td>
-                <td class="td details__recent-activities__table__body__row--info">Item 3</td>
-                <td class="td details__recent-activities__table__body__row--info"><span class="status delivered">Item 4</span></td>
-            </tr>
-            <tr class="details__recent-activities__table__body__row">
-                <td class="td details__recent-activities__table__body__row--info">Item 1</td>
-                <td class="td details__recent-activities__table__body__row--info">Item 2</td>
-                <td class="td details__recent-activities__table__body__row--info">Item 3</td>
-                <td class="td details__recent-activities__table__body__row--info"><span class="status pending">Item 4</span></td>
-            </tr>
-            <tr class="details__recent-activities__table__body__row">
-                <td class="td details__recent-activities__table__body__row--info">Item 1</td>
-                <td class="td details__recent-activities__table__body__row--info">Item 2</td>
-                <td class="td details__recent-activities__table__body__row--info">Item 3</td>
-                <td class="td details__recent-activities__table__body__row--info"><span class="status returned">Item 4</span></td>
-            </tr>
-            <tr class="details__recent-activities__table__body__row">
-                <td class="td details__recent-activities__table__body__row--info">Item 1</td>
-                <td class="td details__recent-activities__table__body__row--info">Item 2</td>
-                <td class="td details__recent-activities__table__body__row--info">Item 3</td>
-                <td class="td details__recent-activities__table__body__row--info"><span class="status delivered">Item 4</span></td>
-            </tr>
-            <tr class="details__recent-activities__table__body__row">
-                <td class="td details__recent-activities__table__body__row--info">Item 1</td>
-                <td class="td details__recent-activities__table__body__row--info">Item 2</td>
-                <td class="td details__recent-activities__table__body__row--info">Item 3</td>
-                <td class="td details__recent-activities__table__body__row--info"><span class="status pending">Item 4</span></td>
-            </tr>
-            <tr class="details__recent-activities__table__body__row">
-                <td class="td details__recent-activities__table__body__row--info">Item 1</td>
-                <td class="td details__recent-activities__table__body__row--info">Item 2</td>
-                <td class="td details__recent-activities__table__body__row--info">Item 3</td>
-                <td class="td details__recent-activities__table__body__row--info"><span class="status delivered">Item 4</span></td>
-            </tr>
+            <?php
+             $db = new Database();
+             $getRows = $db->getRows("SELECT * FROM forms ORDER BY date DESC");
+             foreach ($getRows as $row) {
+            ?>
+                <tr class="details__recent-activities__table__body__row">
+                    <td class="td details__recent-activities__table__body__row--info"><?php echo $row['title']; ?></td>
+                    <td class="td details__recent-activities__table__body__row--info"><?php echo $row['comment_count']; ?></td>
+                    <td class="td details__recent-activities__table__body__row--info"><?php echo $row['post_likes']; ?></td>
+                    <td class="td details__recent-activities__table__body__row--info"><span class="status pending"><?php echo ucfirst($row['status']); ?></span></td>
+                </tr>
+            <?php } ?>
         </tbody>
     </table>
 </div>

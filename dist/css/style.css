@@ -1,3 +1,27 @@
+/* 
+
+Order -> base -> typography -> general layout -> grid -> page layout -> components
+Breakpointss
+
+0 - 600px: Phone screens
+600px - 900px: tablet portrait
+900px - 1200px: tablet landscape
+[1200px - 1800px] normal code written
+1800px ++: big desktop
+
+*/
+/* 
+breakpoint choices
+
+--phone
+
+--tab-port
+
+--tab-land
+
+--big-screen
+
+ */
 :root {
   --color-secondary: #672682d9;
   --color-light-1: #fff;
@@ -43,6 +67,12 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 3rem; }
+  @media only screen and (max-width: 56.25em) {
+    .card-box {
+      grid-template-columns: repeat(2, 1fr); } }
+  @media only screen and (max-width: 37.25em) {
+    .card-box {
+      grid-template-columns: repeat(1, 1fr); } }
   .card-box__card {
     position: relative;
     background-color: var(--color-light-1);
@@ -168,28 +198,208 @@ body {
   .details__recent-connections__table__row:hover span {
     color: var(--color-light-1); }
 
+/* Ajax Search Results  */
+#search-layer {
+  position: fixed;
+  transition: all 0.3s;
+  z-index: 34;
+  left: 0px;
+  top: 0px;
+  background-color: rgba(0, 0, 0, 0.9); }
+  @supports (-webkit-backdrop-filter: blur()) or (backdrop-filter: blur()) {
+    #search-layer {
+      -webkit-backdrop-filter: blur(1rem);
+      -moz-backdrop-filter: blur(1rem);
+      backdrop-filter: blur(1rem); } }
+
+/***********************************/
+#livesearch {
+  position: absolute;
+  background: #595a5a;
+  max-height: 27rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 35;
+  width: 88.5%;
+  left: 4.5%;
+  box-shadow: 0px 2px 4px #444;
+  margin-left: 1.2%;
+  border-radius: 8px;
+  cursor: grab;
+  /* Track */
+  /* Handle */ }
+  #livesearch:active {
+    cursor: grabbing; }
+  #livesearch::-webkit-scrollbar {
+    width: 1.5rem; }
+  #livesearch::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px var(--color-secondary);
+    border-radius: 1rem; }
+  #livesearch::-webkit-scrollbar-thumb {
+    background: var(--color-main);
+    border-radius: 1rem; }
+    #livesearch::-webkit-scrollbar-thumb:hover {
+      background: var(--color-main-2); }
+
+/***********************************/
+.live-outer {
+  width: 100%;
+  height: 8rem;
+  display: flex;
+  justify-content: center;
+  z-index: 3;
+  border-bottom: 1px solid #ccc;
+  background: var(--color-light-1); }
+  .live-outer:hover {
+    background: #f3f3f3; }
+
+/***********************************/
+.live-im {
+  float: left;
+  width: 10%;
+  height: 6rem;
+  margin: 8px; }
+  @media only screen and (max-width: 37.25em) {
+    .live-im {
+      width: 25%; } }
+  .live-im img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%; }
+
+/***********************************/
+.live-product-det {
+  float: left;
+  width: 90%;
+  height: 2.5rem; }
+
+/***********************************/
+.live-product-name {
+  width: 100%;
+  height: 2.5rem;
+  margin-top: 4px; }
+  .live-product-name p {
+    color: #333;
+    text-shadow: 1px 1px 1px #dddddd;
+    font-size: var(--paragraph) !important;
+    margin-left: 1rem; }
+    @media only screen and (max-width: 56.25em) {
+      .live-product-name p {
+        font-size: var(--paragraph-med) !important; } }
+    @media only screen and (max-width: 37.25em) {
+      .live-product-name p {
+        font-size: var(--paragraph-small) !important; } }
+    .live-product-name p i {
+      font-weight: 600; }
+    .live-product-name p span {
+      color: #2196f3; }
+
+/***********************************/
+.live-product-price {
+  width: 100%;
+  height: 2.5rem; }
+  .live-product-price-text {
+    float: left;
+    width: 50%; }
+    .live-product-price-text p {
+      margin-left: 1rem;
+      font-size: 1.6rem;
+      font-weight: 600;
+      width: 200%; }
+      .live-product-price-text p span {
+        color: #2196f3; }
+
+/***********************************/
+.link-p-colr {
+  color: #333;
+  text-decoration: none; }
+
+/* Styling  Search form, input and search button*/
+.example {
+  max-width: 100%;
+  margin: auto;
+  z-index: 35; }
+  .example input[type="text"] {
+    padding: 1rem 2rem;
+    height: 4.2rem;
+    font-size: 1.7rem;
+    border: .5px solid #000;
+    border-right: none;
+    float: left;
+    width: 100%;
+    background-color: var(--color-light-1);
+    border-top-left-radius: 5rem;
+    border-bottom-left-radius: 5rem;
+    transition: all 0.5s; }
+    .example input[type="text"]:focus {
+      box-shadow: 0 0.7rem 2.5rem rgba(0, 0, 0, 0.08);
+      outline: none; }
+    @media only screen and (max-width: 37.25em) {
+      .example input[type="text"] {
+        width: 60%; } }
+  .example .btn {
+    float: left;
+    width: 33%;
+    background: var(--color-secondary);
+    color: white;
+    z-index: 35;
+    font-size: 1.7rem;
+    border-left: none;
+    cursor: pointer;
+    border: none;
+    border-top-right-radius: 5rem;
+    border-bottom-right-radius: 5rem; }
+    .example .btn:hover {
+      background: var(--color-main); }
+    .example .btn .search__icon {
+      height: 3rem;
+      width: 3rem;
+      fill: var(--color-light-1); }
+    @media only screen and (max-width: 37.25em) {
+      .example .btn {
+        width: 20%; } }
+
+.clear-fix {
+  display: flex;
+  justify-content: center; }
+  .clear-fix::after {
+    content: "";
+    display: table; }
+
+.textbox-clr {
+  cursor: text;
+  background-color: var(--color-light-1);
+  border-bottom: .5px solid #000;
+  border-top: .5px solid #000;
+  width: 25%;
+  float: left;
+  z-index: 35;
+  outline: none;
+  border-left: none;
+  border-right: none;
+  text-align: center;
+  height: 4.2rem;
+  font-weight: 900;
+  transition: all 0.5s; }
+  @media only screen and (max-width: 37.25em) {
+    .textbox-clr {
+      width: 13%; } }
+
+.example input[type="text"]:focus + .textbox-clr {
+  background-color: #fff;
+  box-shadow: 0 0.7rem 2.5rem rgba(0, 0, 0, 0.08);
+  cursor: pointer; }
+  .example input[type="text"]:focus + .textbox-clr:hover {
+    background-color: var(--status-returned); }
+
+/* layout */
+.search-engine-container {
+  margin-bottom: 1rem;
+  margin-top: 2rem; }
+
 .search {
-  position: relative;
-  width: 40rem;
-  margin: 0 1rem; }
-  .search--label {
-    position: relative;
-    width: 100%;
-    padding: 0.5rem 0rem; }
-  .search--input {
-    width: 100%;
-    height: 4rem;
-    border-radius: 4rem;
-    outline: none;
-    padding: 0.5rem 2rem;
-    font-size: 1.8rem;
-    padding-left: 3.5rem;
-    border: 0.1rem solid var(--color-dark-2); }
-  .search--label .icon-icon {
-    position: absolute;
-    top: 0;
-    left: 1rem;
-    font-size: 1.8rem; }
+  z-index: 35;
+  border-radius: 0; }
 
 .details__recent-activities__table {
   width: 100%;
@@ -282,6 +492,17 @@ body {
   overflow: hidden; }
   .navigation.active {
     width: 8rem; }
+    @media only screen and (max-width: 56.25em) {
+      .navigation.active {
+        width: 30rem;
+        left: 0; } }
+    @media only screen and (max-width: 37.25em) {
+      .navigation.active {
+        width: 27rem;
+        left: 0; } }
+  @media only screen and (max-width: 56.25em) {
+    .navigation {
+      left: -27rem; } }
 
 .main {
   position: absolute;
@@ -293,6 +514,16 @@ body {
   .main.active {
     width: calc(100% - 8rem);
     left: 8rem; }
+    @media only screen and (max-width: 56.25em) {
+      .main.active {
+        left: 30rem; } }
+    @media only screen and (max-width: 37.25em) {
+      .main.active {
+        left: 27rem; } }
+  @media only screen and (max-width: 56.25em) {
+    .main {
+      width: 100%;
+      left: 0; } }
 
 .details {
   position: relative;
@@ -302,6 +533,9 @@ body {
   grid-template-columns: 2fr 1fr;
   grid-gap: 3rem;
   margin-top: 1rem; }
+  @media only screen and (max-width: 37.25em) {
+    .details {
+      grid-template-columns: repeat(1, 1fr); } }
   .details__recent-activities {
     position: relative;
     display: grid;
@@ -314,6 +548,9 @@ body {
       display: flex;
       justify-content: space-between;
       align-items: flex-start; }
+    @media only screen and (max-width: 37.25em) {
+      .details__recent-activities {
+        overflow-x: auto; } }
   .details__recent-connections {
     position: relative;
     display: grid;

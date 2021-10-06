@@ -1,16 +1,20 @@
 <div class="topbar">
-    <div class="topbar--toggle">
-        <ion-icon class="icon-icon" name="menu-outline"></ion-icon>
-    </div>
+    <?php include('./includes/topbar/toggle.php'); ?>
     <!-- Search -->
-    <div class="search">
-        <label class="search--label" for="">
-            <input type="text" class="search--input" placeholder="Search Here" name="" id="">
-            <ion-icon class="icon-icon" name="search-outline"></ion-icon>
-        </label>
+    <div class="search-engine-container">
+        <div class="search-engine">
+            <div class="search">
+                <script src="../dist/scripts/ajax.js"></script>
+                <?php include_once('./includes/topbar/search.php'); ?>
+            </div>
+        </div>
     </div>
     <!-- User Image -->
     <div class="user-img">
-        <img src="./img/user.jpg" class="user-img--img" alt="">
+        <?php
+        $db = new Database();
+        $getRow = $db->getRow("SELECT * FROM users WHERE username = '$username'");
+        ?>
+        <img src="../img/<?php echo $getRow['img']; ?>" class="user-img--img" alt="">
     </div>
 </div>

@@ -1,7 +1,7 @@
 <?php include('../includes/db/init.php') ?>
 <!DOCTYPE html>
 <html lang="en">
-
+<?php $username = 'admin'; ?>
 <head>
     <?php include('./includes/head.php') ?>
 </head>
