@@ -53,6 +53,9 @@
         display: flex;
         text-decoration: none;
         color: var(--color-light-1);
+        background-color: transparent;
+        border: none;
+        outline: none;
         &--icon {
             position: relative;
             display: block;

@@ -36,21 +36,21 @@
                     padding: 0.5rem;
                    
                     &.pending{
-                        background-color: var(--status-pending);
+                        background-color: var(--color-pending);
                         text-shadow: var(--color-secondary);
                     }
                     &.inprogress{
-                        background-color: var(--status-inprocess);
+                        background-color: var(--color-inprocess);
                         text-shadow: var(--color-secondary);
 
                     }
                     &.delivered{
-                        background-color: var(--status-delivered);
+                        background-color: var(--color-success);
                         text-shadow: var(--color-secondary);
 
                     }
                     &.returned{
-                        background-color: var(--status-returned);
+                        background-color: var(--color-danger);
                         text-shadow: var(--color-secondary);
                     }
                 }

@@ -95,7 +95,8 @@ body {
       color: var(--color-dark-2); }
     .card-box__card:hover {
       background-color: var(--color-secondary); }
-    .card-box__card:hover .card-box__card__info--number, .card-box__card:hover .card-box__card__info--name, .card-box__card:hover .card-box__card__info--icon > .icon-icon {
+    .card-box__card:hover .card-box__card__info--number, .card-box__card:hover .card-box__card__info--name,
+    .card-box__card:hover .card-box__card__info--icon > .icon-icon {
       color: var(--color-light-1); }
 
 .list {
@@ -147,7 +148,10 @@ body {
     width: 100%;
     display: flex;
     text-decoration: none;
-    color: var(--color-light-1); }
+    color: var(--color-light-1);
+    background-color: transparent;
+    border: none;
+    outline: none; }
     .list__item-link--icon {
       position: relative;
       display: block;
@@ -430,16 +434,16 @@ body {
         border-radius: 4px;
         padding: 0.5rem; }
         .details__recent-activities__table__head__row--heading .status.pending, .details__recent-activities__table__head__row--info .status.pending, .details__recent-activities__table__body__row--heading .status.pending, .details__recent-activities__table__body__row--info .status.pending {
-          background-color: var(--status-pending);
+          background-color: var(--color-pending);
           text-shadow: var(--color-secondary); }
         .details__recent-activities__table__head__row--heading .status.inprogress, .details__recent-activities__table__head__row--info .status.inprogress, .details__recent-activities__table__body__row--heading .status.inprogress, .details__recent-activities__table__body__row--info .status.inprogress {
-          background-color: var(--status-inprocess);
+          background-color: var(--color-inprocess);
           text-shadow: var(--color-secondary); }
         .details__recent-activities__table__head__row--heading .status.delivered, .details__recent-activities__table__head__row--info .status.delivered, .details__recent-activities__table__body__row--heading .status.delivered, .details__recent-activities__table__body__row--info .status.delivered {
-          background-color: var(--status-delivered);
+          background-color: var(--color-success);
           text-shadow: var(--color-secondary); }
         .details__recent-activities__table__head__row--heading .status.returned, .details__recent-activities__table__head__row--info .status.returned, .details__recent-activities__table__body__row--heading .status.returned, .details__recent-activities__table__body__row--info .status.returned {
-          background-color: var(--status-returned);
+          background-color: var(--color-danger);
           text-shadow: var(--color-secondary); }
     .details__recent-activities__table__head__row--heading, .details__recent-activities__table__body__row--heading {
       font-weight: 600; }

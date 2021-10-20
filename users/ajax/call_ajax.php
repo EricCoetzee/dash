@@ -7,7 +7,7 @@ function die_r($value)
 {
     $s = "";
     foreach ($value as $row) {
-        $image = $row['img'];
+        $image = $row['img_one'];
         if ($image == null || $image == false) {
             $image = 'image.png';
         }

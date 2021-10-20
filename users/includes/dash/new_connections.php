@@ -1,6 +1,6 @@
 <div class="details__recent-connections">
     <div class="details__recent-connections__header">
-        <h2 class="secondary-heading">Recent Connections</h2>
+        <h2 class="heading-secondary">Recent Connections</h2>
     </div>
     <table class="details__recent-connections__table">
     <?php

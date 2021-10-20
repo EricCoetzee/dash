@@ -4,10 +4,11 @@
 <?php $username = 'admin'; ?>
 <head>
     <?php include('./includes/head.php') ?>
+    <script src="../dist/scripts/loadMenu.js"></script>
 </head>
 
 <body>
-    <section class="admin-container">
+    <section class="admin-container"> 
         <!-- Navigation Menu -->
         <?php include('./includes/nav.php') ?>
         <!-- Main sections -->

@@ -1,7 +1,7 @@
 <nav class="navigation">
     <ul class="list">
         <li class="list__item">
-            <a href="" class="list__item-link">
+            <a class="list__item-link">
                 <span class="list__item-link--icon">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon-svg" viewBox="0 0 96.71 90.26">
                         <defs>
@@ -9,23 +9,29 @@
                                 .BG03-cls-1 {
                                     fill: #672b82;
                                 }
+
                                 .BG03-cls-2 {
                                     fill: #672b82;
                                 }
+
                                 .BG03-cls-3 {
                                     fill: #f1ba33;
                                 }
+
                                 .BG03-cls-5 {
                                     fill: #672b82;
                                 }
+
                                 .BG03-cls-4 {
                                     fill: #f1ba33;
                                 }
+
                                 .BG03-cls-5 {
                                     font-size: 6.27px;
                                     font-family: Gotham-Medium, Gotham;
                                     font-weight: 500;
                                 }
+
                                 .BG03-cls-6 {
                                     letter-spacing: -.04em;
                                 }
@@ -48,55 +54,63 @@
             </a>
         </li>
         <li class="list__item">
-            <a href="" class="list__item-link">
+            <button type="button" class="list__item-link" value="Dash">
                 <span class="list__item-link--icon">
                     <ion-icon class="icon-icon" name="home-outline"></ion-icon>
                 </span>
-                <span class="list__item-link--title">Dashboard</span>
-            </a>
+                <span class="list__item-link--title Dash">Dashboard</span>
+            </button>
         </li>
         <li class="list__item">
-            <a href="" class="list__item-link">
+            <button type="button" class="list__item-link Neo" value="Neo">
+                <span class="list__item-link--icon">
+                    <ion-icon class="icon-icon" name="home-outline"></ion-icon>
+                </span>
+                <span class="list__item-link--title Dash">Neo</span>
+            </button>
+        </li>
+        <li class="list__item">
+            <button type="button" class="list__item-link ViewPost" value="ViewPost">
                 <span class="list__item-link--icon">
                     <ion-icon class="icon-icon" name="grid-outline"></ion-icon>
                 </span>
                 <span class="list__item-link--title">View Posts</span>
-            </a>
+            </button>
         </li>
         <li class="list__item">
-            <a href="" class="list__item-link">
+            <button type="button" class="list__item-link CreatePost" value="CreatePost">
                 <span class="list__item-link--icon">
                     <ion-icon class="icon-icon" name="create-outline"></ion-icon>
                 </span>
                 <span class="list__item-link--title">Create Posts</span>
-            </a>
+            </button>
         </li>
         <li class="list__item">
-            <a href="" class="list__item-link">
+            <button type="button" class="list__item-link Notifications" value="Notifications">
                 <span class="list__item-link--icon">
                     <ion-icon class="icon-icon" name="notifications-outline"></ion-icon>
                 </span>
                 <span class="list__item-link--title">Notifications</span>
-            </a>
+            </button>
         </li>
         <li class="list__item">
-            <a href="" class="list__item-link">
+            <button type="button" class="list__item-link Help" value="Help">
                 <span class="list__item-link--icon">
                     <ion-icon class="icon-icon" name="help-outline"></ion-icon>
                 </span>
                 <span class="list__item-link--title">Help</span>
-            </a>
+            </button>
         </li>
         <li class="list__item">
-            <a href="" class="list__item-link">
+            <button type="button" class="list__item-link Settings" value="Settings">
                 <span class="list__item-link--icon">
                     <ion-icon class="icon-icon" name="settings-outline"></ion-icon>
                 </span>
                 <span class="list__item-link--title">Settings</span>
-            </a>
+            </button>
         </li>
         <li class="list__item">
-            <a href="" class="list__item-link">
+            <a class="list__item-link logOut">
                 <span class="list__item-link--icon">
                     <ion-icon class="icon-icon" name="log-out-outline"></ion-icon>
                 </span>

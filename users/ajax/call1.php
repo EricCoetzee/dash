@@ -1,3 +1,4 @@
+<?php include('../../includes/db/init.php') ?>
 <div class="details__recent-activities">
     <div class="details__recent-activities__header">
         <h2 class="heading-secondary">Recent Post</h2>
@@ -14,9 +15,9 @@
         </thead>
         <tbody class="details__recent-activities__table__body">
             <?php
-            $db = new Database();
-            $getRows = $db->getRows("SELECT * FROM forms ORDER BY date DESC");
-            foreach ($getRows as $row) {
+             $db = new Database();
+             $getRows = $db->getRows("SELECT * FROM forms ORDER BY date DESC");
+             foreach ($getRows as $row) {
             ?>
                 <tr class="details__recent-activities__table__body__row">
                     <td class="td details__recent-activities__table__body__row--info"><?php echo $row['title']; ?></td>
