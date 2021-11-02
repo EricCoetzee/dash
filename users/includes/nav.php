@@ -62,14 +62,6 @@
             </button>
         </li>
         <li class="list__item">
-            <button type="button" class="list__item-link Neo" value="Neo">
-                <span class="list__item-link--icon">
-                    <ion-icon class="icon-icon" name="home-outline"></ion-icon>
-                </span>
-                <span class="list__item-link--title Dash">Neo</span>
-            </button>
-        </li>
-        <li class="list__item">
             <button type="button" class="list__item-link ViewPost" value="ViewPost">
                 <span class="list__item-link--icon">
                     <ion-icon class="icon-icon" name="grid-outline"></ion-icon>

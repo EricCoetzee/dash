@@ -49,7 +49,7 @@ if (isset($_COOKIE['EzeeMax']) && isset($_COOKIE['ezeemaxMail']) && isset($_COOK
                     ?>
                 <tr class="details__recent-activities__table__body__row">
                     <td class="td details__recent-activities__table__body__row--info"><?php echo ucfirst($i['type']); ?></td>
-                    <td class="td details__recent-activities__table__body__row--info"><img class="author-img" src="../img/<?php echo $author_img ?>"></td>
+                    <td class="td details__recent-activities__table__body__row--info"><img class="details__recent-activities__table__body__row--info-img" src="../img/<?php echo $author_img ?>"></td>
                     <?php if ($i['comment_id'] > 0) { ?>
                     <td class="td details__recent-activities__table__body__row--info">
                     <?php
@@ -77,59 +77,3 @@ if (isset($_COOKIE['EzeeMax']) && isset($_COOKIE['ezeemaxMail']) && isset($_COOK
             <?php } } }?>
         </tbody>
     </table>
-<?php
-$db = new Database();
-$getRows = $db->getRows("SELECT * FROM `comments` WHERE `post_author` = 'EzeeMax' ORDER BY `date` DESC LIMIT 15");
-if (count($getRows) > 0) {
-    foreach ($getRows as $i) { 
-        if ($i['type'] === 'comment') {
-            $notification = "./users/comments";
-        } elseif ($i['type'] === 'connection') {
-            $notification ="./users/connections";
-        } elseif ($i['type'] === 'appointment') {
-            $notification = "./users/appointments";
-        } 
-    ?>
-        <a href="<?php echo $notification?>" style="<?php if ($i['viewed'] == 'no') {
-                                        echo "font-weight:900; color:firebrick;";
-                                    } ?>">
-            <?php if ($i['comment_id'] > 0) { ?>
-                <small><b><?php echo date('F j, Y, g:i a', strtotime($i['date'])) ?></b></small>
-                <div class="comment-info">
-                    <?php
-                    if ($i['type'] === 'comment') {
-                        $author = $i['comment_author'];
-                        $db = new Database();
-                        $getRow = $db->getRow("SELECT * FROM `users` WHERE username = '$author'");
-                        $author_img = $getRow['img'];
-                    } elseif ($i['type'] === 'connection') {
-                        $author = $i['connection'];
-                        $author_img = 'userImage.png';
-                    } elseif ($i['type'] === 'appointment') {
-                        $author = $i['comment_author'];
-                        $author_img = 'userImage.png';
-                    }
-                    ?>
-                    <img class="author-img" src="../img/<?php echo $author_img ?>">
-                    <?php
-                    $the_commented_post = $i['comment_post_id'];
-                    $db = new Database();
-                    $getRow = $db->getRow("SELECT * FROM `forms` WHERE post_id = '$the_commented_post'");
-                    ?>
-                    <span>
-                        <?php
-                        if ($i['type'] === 'comment') {
-                            if ($i['comment_author'] === "EzeeMax") {
-                                echo "You just commented on " . substr($getRow['title'], 0, 20);
-                            } else {
-                                echo ucwords($i['comment_author']) . " just commented on " . substr($getRow['title'], 0, 20);
-                            }
-                        } elseif ($i['type'] === 'connection') {
-                            echo  "You have a new connection " . ucwords($i['connection']);
-                        } elseif ($i['type'] === 'appointment') {
-                            echo  "You have a new appointment on " . ucwords($i['appointment_date']);
-                        }
-                        ?>
-                    </span>
-                </div>
-        <?php }}}  ?>

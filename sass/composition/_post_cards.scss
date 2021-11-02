@@ -1,0 +1,172 @@
+.heading {
+    @include heading2;
+}
+.post {
+    border: 0.3rem solid var(--color-secondary);
+    display: table;
+    position: relative;
+    width: 98%;
+    margin: 1rem auto;
+    @include respons(phone) {
+        display: block;
+    }
+    &__hero {
+        display: table-cell;
+        vertical-align: middle;
+        width: 22rem;
+        position: relative;
+        overflow: hidden;
+        @include respons(phone) {
+            display: block;
+            margin: auto;
+            width: 90%;
+        }
+        /* @include respons(phone){ 
+            width: 90%;
+        }  */
+        &:hover > .post__img {
+            filter: blur(3px) brightness(60%);
+        }
+        &:hover > .post__img-caption {
+            opacity: 1;
+            transform: translate(-50%, -50%);
+        }
+    }
+    &__img {
+        height: 20rem;
+        width: 20rem;
+        cursor: pointer;
+        @include respons(phone) {
+            width: 100%;
+        }
+    }
+    &__img-caption {
+        color: var(--color-light-1);
+        font-weight: 700;
+        text-shadow: 0 0 2rem var(--text-color-dark);
+        text-align: center;
+        font-size: 1.7rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        text-transform: uppercase;
+        opacity: 0;
+        transition: all 0.5s;
+    }
+    &__info {
+        margin-left: 0.5rem;
+        padding: 0.5rem;
+        display: table-cell;
+        vertical-align: middle;
+        @include respons(phone) {
+            display: block;
+        }
+    }
+    &__category {
+        @include para;
+        font-weight: 600;
+        @include respons(phone) {
+            text-align: center;
+        }
+    }
+    &__date {
+        @include respons(phone) {
+            text-align: center;
+        }
+        margin-top: 0.3rem;
+    }
+    &__date-icon {
+        height: 1rem;
+        width: 1.3rem;
+        margin: 0 0.2rem;
+        fill: var(--color-secondary);
+    }
+    &__time-icon {
+        height: 1rem;
+        width: 1.3rem;
+        margin: 0 0.2rem;
+        fill: var(--color-secondary);
+    }
+    &__details {
+        margin-bottom: 2rem;
+    }
+    &__title {
+        @include heading2;
+        @include respons(phone) {
+            text-align: center;
+        }
+    }
+    &__title-link {
+        text-decoration: none;
+        color: var(--text-color-dark);
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    &__description {
+        @include para;
+        @include respons(phone) {
+            text-align: center;
+        }
+        overflow: hidden;
+    }
+    &__pay-loc {
+        @include para;
+        display: flex;
+        margin: 0.5rem 0;
+        font-weight: 600;
+        @include respons(phone) {
+            justify-content: center;
+        }
+    }
+    &__payment {
+        color: var(--color-main);
+        margin-right: 4rem;
+    }
+    &__location {
+        color: var(--color-secondary);
+    }
+    &__stats-box {
+        margin-top: 2rem;
+        @include respons(phone) {
+            justify-content: center;
+        }
+    }
+    &__stats {
+        display: flex;
+        flex-direction: column;
+        &:not(:last-child) {
+            margin-right: 4rem;
+        }
+    }
+    &__stats-link {
+        text-decoration: none;
+    }
+    &__stats-link:hover &__stat-value {
+        color: var(--color-secondary);
+    }
+    &__stat-value {
+        align-self: center;
+        font-size: 2rem;
+        color: var(--color-main);
+        font-weight: 600;
+    }
+    &__stat-name {
+        align-self: center;
+        @include para;
+        color: var(--text-color-dark);
+    }
+    &__btn-box{
+        margin-top: 2rem;
+        display: flex;
+    }
+    &__btn-text {
+        text-align: center;
+        color: var(--color-light-1);
+        font-weight: 600;
+        align-self: center;
+        @include para;
+        text-transform: uppercase;
+    }
+}

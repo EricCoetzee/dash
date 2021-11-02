@@ -23,6 +23,7 @@ breakpoint choices
 
  */
 :root {
+  --color-main: #e41f1f;
   --color-secondary: #672682d9;
   --color-light-1: #fff;
   --color-gray: #f5f5f5;
@@ -59,6 +60,113 @@ body {
   color: var(--color-light-1);
   border-radius: 0.6rem;
   font-size: 1.6rem; }
+
+.bttn, .bttn:link, .bttn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5rem 3rem;
+  display: inline-block;
+  border-radius: 10rem;
+  transition: all .2s;
+  position: relative;
+  font-size: var(--paragraph) !important;
+  max-width: 12rem;
+  border: none;
+  cursor: pointer; }
+  @media only screen and (max-width: 56.25em) {
+    .bttn, .bttn:link, .bttn:visited {
+      font-size: var(--paragraph-med) !important; } }
+  @media only screen and (max-width: 37.25em) {
+    .bttn, .bttn:link, .bttn:visited {
+      font-size: var(--paragraph-small) !important; } }
+  @media only screen and (max-width: 56.25em), only screen and (hover: none) {
+    .bttn, .bttn:link, .bttn:visited {
+      padding: 1rem 2rem; } }
+
+.bttn__min {
+  padding: 1rem 3rem !important;
+  display: inline !important; }
+
+.bttn:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+  .bttn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0; }
+
+.bttn:active, .bttn:focus {
+  outline: none;
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+
+.bttn--white {
+  font-weight: 600;
+  color: var(--color-main);
+  background-color: var(--color-light-1); }
+  .bttn--white::after {
+    background-color: var(--color-light-1); }
+
+.bttn--main {
+  font-weight: 600;
+  color: var(--color-light-1);
+  background-color: var(--color-main);
+  text-align: center;
+  font-size: var(--paragraph) !important; }
+  @media only screen and (max-width: 56.25em) {
+    .bttn--main {
+      font-size: var(--paragraph-med) !important; } }
+  @media only screen and (max-width: 37.25em) {
+    .bttn--main {
+      font-size: var(--paragraph-small) !important; } }
+  .bttn--main::after {
+    background-color: var(--color-main); }
+
+.bttn--blue {
+  font-weight: 600;
+  color: var(--color-light-1);
+  background-color: var(--status-inprocess);
+  text-align: center;
+  font-size: var(--paragraph) !important; }
+  @media only screen and (max-width: 56.25em) {
+    .bttn--blue {
+      font-size: var(--paragraph-med) !important; } }
+  @media only screen and (max-width: 37.25em) {
+    .bttn--blue {
+      font-size: var(--paragraph-small) !important; } }
+  .bttn--blue::after {
+    background-color: var(--status-inprocess); }
+
+.bttn--gradiant {
+  font-weight: 600;
+  color: var(--color-light-1);
+  background-image: var(--gradient-color-5);
+  font-size: 1.6rem;
+  text-align: center;
+  font-size: var(--paragraph) !important; }
+  @media only screen and (max-width: 56.25em) {
+    .bttn--gradiant {
+      font-size: var(--paragraph-med) !important; } }
+  @media only screen and (max-width: 37.25em) {
+    .bttn--gradiant {
+      font-size: var(--paragraph-small) !important; } }
+  .bttn--gradiant::after {
+    background-image: var(--gradient-color-4); }
+
+.bttn::after {
+  content: '';
+  height: 100%;
+  width: 100%;
+  display: inline-block;
+  border-radius: 10rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all .4s; }
+
+.bttn--animated {
+  animation: moveInBottom 1s ease-in-out .75s;
+  animation-fill-mode: backwards; }
 
 .card-box {
   position: relative;
@@ -170,6 +278,193 @@ body {
       height: 6rem;
       line-height: 6rem;
       text-align: center; }
+
+.heading {
+  font-size: var(--heading-2) !important; }
+  @media only screen and (max-width: 56.25em) {
+    .heading {
+      font-size: var(--heading-2-med) !important; } }
+  @media only screen and (max-width: 37.25em) {
+    .heading {
+      font-size: var(--heading-2-small) !important; } }
+
+.post {
+  border: 0.3rem solid var(--color-secondary);
+  display: table;
+  position: relative;
+  width: 98%;
+  margin: 1rem auto; }
+  @media only screen and (max-width: 37.25em) {
+    .post {
+      display: block; } }
+  .post__hero {
+    display: table-cell;
+    vertical-align: middle;
+    width: 22rem;
+    position: relative;
+    overflow: hidden;
+    /* @include respons(phone){ 
+            width: 90%;
+        }  */ }
+    @media only screen and (max-width: 37.25em) {
+      .post__hero {
+        display: block;
+        margin: auto;
+        width: 90%; } }
+    .post__hero:hover > .post__img {
+      filter: blur(3px) brightness(60%); }
+    .post__hero:hover > .post__img-caption {
+      opacity: 1;
+      transform: translate(-50%, -50%); }
+  .post__img {
+    height: 20rem;
+    width: 20rem;
+    cursor: pointer; }
+    @media only screen and (max-width: 37.25em) {
+      .post__img {
+        width: 100%; } }
+  .post__img-caption {
+    color: var(--color-light-1);
+    font-weight: 700;
+    text-shadow: 0 0 2rem var(--text-color-dark);
+    text-align: center;
+    font-size: 1.7rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    text-transform: uppercase;
+    opacity: 0;
+    transition: all 0.5s; }
+  .post__info {
+    margin-left: 0.5rem;
+    padding: 0.5rem;
+    display: table-cell;
+    vertical-align: middle; }
+    @media only screen and (max-width: 37.25em) {
+      .post__info {
+        display: block; } }
+  .post__category {
+    font-size: var(--paragraph) !important;
+    font-weight: 600; }
+    @media only screen and (max-width: 56.25em) {
+      .post__category {
+        font-size: var(--paragraph-med) !important; } }
+    @media only screen and (max-width: 37.25em) {
+      .post__category {
+        font-size: var(--paragraph-small) !important; } }
+    @media only screen and (max-width: 37.25em) {
+      .post__category {
+        text-align: center; } }
+  .post__date {
+    margin-top: 0.3rem; }
+    @media only screen and (max-width: 37.25em) {
+      .post__date {
+        text-align: center; } }
+  .post__date-icon {
+    height: 1rem;
+    width: 1.3rem;
+    margin: 0 0.2rem;
+    fill: var(--color-secondary); }
+  .post__time-icon {
+    height: 1rem;
+    width: 1.3rem;
+    margin: 0 0.2rem;
+    fill: var(--color-secondary); }
+  .post__details {
+    margin-bottom: 2rem; }
+  .post__title {
+    font-size: var(--heading-2) !important; }
+    @media only screen and (max-width: 56.25em) {
+      .post__title {
+        font-size: var(--heading-2-med) !important; } }
+    @media only screen and (max-width: 37.25em) {
+      .post__title {
+        font-size: var(--heading-2-small) !important; } }
+    @media only screen and (max-width: 37.25em) {
+      .post__title {
+        text-align: center; } }
+  .post__title-link {
+    text-decoration: none;
+    color: var(--text-color-dark); }
+    .post__title-link:hover {
+      text-decoration: underline; }
+  .post__description {
+    font-size: var(--paragraph) !important;
+    overflow: hidden; }
+    @media only screen and (max-width: 56.25em) {
+      .post__description {
+        font-size: var(--paragraph-med) !important; } }
+    @media only screen and (max-width: 37.25em) {
+      .post__description {
+        font-size: var(--paragraph-small) !important; } }
+    @media only screen and (max-width: 37.25em) {
+      .post__description {
+        text-align: center; } }
+  .post__pay-loc {
+    font-size: var(--paragraph) !important;
+    display: flex;
+    margin: 0.5rem 0;
+    font-weight: 600; }
+    @media only screen and (max-width: 56.25em) {
+      .post__pay-loc {
+        font-size: var(--paragraph-med) !important; } }
+    @media only screen and (max-width: 37.25em) {
+      .post__pay-loc {
+        font-size: var(--paragraph-small) !important; } }
+    @media only screen and (max-width: 37.25em) {
+      .post__pay-loc {
+        justify-content: center; } }
+  .post__payment {
+    color: var(--color-main);
+    margin-right: 4rem; }
+  .post__location {
+    color: var(--color-secondary); }
+  .post__stats-box {
+    margin-top: 2rem; }
+    @media only screen and (max-width: 37.25em) {
+      .post__stats-box {
+        justify-content: center; } }
+  .post__stats {
+    display: flex;
+    flex-direction: column; }
+    .post__stats:not(:last-child) {
+      margin-right: 4rem; }
+  .post__stats-link {
+    text-decoration: none; }
+  .post__stats-link:hover .post__stat-value {
+    color: var(--color-secondary); }
+  .post__stat-value {
+    align-self: center;
+    font-size: 2rem;
+    color: var(--color-main);
+    font-weight: 600; }
+  .post__stat-name {
+    align-self: center;
+    font-size: var(--paragraph) !important;
+    color: var(--text-color-dark); }
+    @media only screen and (max-width: 56.25em) {
+      .post__stat-name {
+        font-size: var(--paragraph-med) !important; } }
+    @media only screen and (max-width: 37.25em) {
+      .post__stat-name {
+        font-size: var(--paragraph-small) !important; } }
+  .post__btn-box {
+    margin-top: 2rem;
+    display: flex; }
+  .post__btn-text {
+    text-align: center;
+    color: var(--color-light-1);
+    font-weight: 600;
+    align-self: center;
+    font-size: var(--paragraph) !important;
+    text-transform: uppercase; }
+    @media only screen and (max-width: 56.25em) {
+      .post__btn-text {
+        font-size: var(--paragraph-med) !important; } }
+    @media only screen and (max-width: 37.25em) {
+      .post__btn-text {
+        font-size: var(--paragraph-small) !important; } }
 
 .details__recent-connections__table__row__data__img-box {
   position: relative;
@@ -445,6 +740,10 @@ body {
         .details__recent-activities__table__head__row--heading .status.returned, .details__recent-activities__table__head__row--info .status.returned, .details__recent-activities__table__body__row--heading .status.returned, .details__recent-activities__table__body__row--info .status.returned {
           background-color: var(--color-danger);
           text-shadow: var(--color-secondary); }
+      .details__recent-activities__table__head__row--heading-img, .details__recent-activities__table__head__row--info-img, .details__recent-activities__table__body__row--heading-img, .details__recent-activities__table__body__row--info-img {
+        border-radius: 50%;
+        width: 5rem;
+        height: 5rem; }
     .details__recent-activities__table__head__row--heading, .details__recent-activities__table__body__row--heading {
       font-weight: 600; }
 

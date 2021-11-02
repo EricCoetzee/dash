@@ -1,7 +1,7 @@
 <div class="details__recent-activities">
     <div class="details__recent-activities__header">
-        <h2 class="heading-secondary">Recent Post</h2>
-        <a href="" class="bttn bttn--main">View All</a>
+        <h2 class="heading-secondary">Recent Activities</h2>
+        <a href="" class="bttn bttn--blue">View All</a>
     </div>
     <table class="details__recent-activities__table">
         <thead class="details__recent-activities__table__head">
