@@ -3,7 +3,7 @@
         <li class="list__item">
             <a class="list__item-link">
                 <span class="list__item-link--icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon-svg" viewBox="0 0 96.71 90.26">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon-svg icon-svg--1" viewBox="0 0 96.71 90.26">
                         <defs>
                             <style>
                                 .BG03-cls-1 {
@@ -66,7 +66,7 @@
         <li class="list__item">
             <button type="button" class="list__item-link ViewPost" value="ViewPost">
                 <span class="list__item-link--icon">
-                    <svg class="post__time-icon">
+                    <svg class="icon-svg">
                         <use xlink:href="../img/svg/sprite.svg#icon-home5"></use>
                     </svg>
                 </span>
@@ -76,7 +76,7 @@
         <li class="list__item">
             <button type="button" class="list__item-link CreatePost" value="CreatePost">
                 <span class="list__item-link--icon">
-                    <svg class="post__time-icon">
+                    <svg class="icon-svg">
                         <use xlink:href="../img/svg/sprite.svg#icon-add-solid"></use>
                     </svg>
                 </span>
@@ -86,7 +86,7 @@
         <li class="list__item">
             <button type="button" class="list__item-link Notifications" value="Notifications">
                 <span class="list__item-link--icon">
-                    <svg class="post__time-icon">
+                    <svg class="icon-svg">
                         <use xlink:href="../img/svg/sprite.svg#icon-bell2"></use>
                     </svg>
                 </span>
@@ -96,7 +96,7 @@
         <li class="list__item">
             <button type="button" class="list__item-link Help" value="Help">
                 <span class="list__item-link--icon">
-                    <svg class="post__time-icon">
+                    <svg class="icon-svg">
                         <use xlink:href="../img/svg/sprite.svg#icon-help"></use>
                     </svg>
                 </span>
@@ -106,7 +106,7 @@
         <li class="list__item">
             <button type="button" class="list__item-link Settings" value="Settings">
                 <span class="list__item-link--icon">
-                    <svg class="post__time-icon">
+                    <svg class="icon-svg">
                         <use xlink:href="../img/svg/sprite.svg#icon-wrench"></use>
                     </svg>
                 </span>
@@ -116,7 +116,7 @@
         <li class="list__item">
             <a class="list__item-link logOut">
                 <span class="list__item-link--icon">
-                    <svg class="post__time-icon">
+                    <svg class="icon-svg">
                         <use xlink:href="../img/svg/sprite.svg#icon-switch2"></use>
                     </svg>
                 </span>

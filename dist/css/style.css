@@ -226,6 +226,9 @@ body {
     .list__item:hover .list__item-link,
     .list__item.hovered .list__item-link {
       color: var(--color-secondary); }
+      .list__item:hover .list__item-link .icon-svg,
+      .list__item.hovered .list__item-link .icon-svg {
+        fill: var(--color-secondary); }
       .list__item:hover .list__item-link::before,
       .list__item.hovered .list__item-link::before {
         content: "";
@@ -268,10 +271,14 @@ body {
       line-height: 7rem;
       text-align: center; }
       .list__item-link--icon .icon-svg {
-        height: 1rem;
-        width: 1.3rem;
+        height: 2rem;
+        width: 2.2rem;
         margin: 0 0.2rem;
-        fill: var(--color-secondary); }
+        fill: var(--color-light-1); }
+        .list__item-link--icon .icon-svg--1 {
+          height: 4.5rem;
+          margin: 2rem 1rem 0 1rem;
+          width: 4.5rem; }
       .list__item-link--icon .icon-icon {
         font-size: 2.5rem; }
     .list__item-link--title {
