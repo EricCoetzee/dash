@@ -56,7 +56,9 @@
         <li class="list__item">
             <button type="button" class="list__item-link" value="Dash">
                 <span class="list__item-link--icon">
-                    <ion-icon class="icon-icon" name="home-outline"></ion-icon>
+                    <svg class="icon-svg">
+                        <use xlink:href="../img/svg/sprite.svg#icon-home5"></use>
+                    </svg>
                 </span>
                 <span class="list__item-link--title Dash">Dashboard</span>
             </button>
@@ -64,7 +66,9 @@
         <li class="list__item">
             <button type="button" class="list__item-link ViewPost" value="ViewPost">
                 <span class="list__item-link--icon">
-                    <ion-icon class="icon-icon" name="grid-outline"></ion-icon>
+                    <svg class="post__time-icon">
+                        <use xlink:href="../img/svg/sprite.svg#icon-home5"></use>
+                    </svg>
                 </span>
                 <span class="list__item-link--title">View Posts</span>
             </button>
@@ -72,7 +76,9 @@
         <li class="list__item">
             <button type="button" class="list__item-link CreatePost" value="CreatePost">
                 <span class="list__item-link--icon">
-                    <ion-icon class="icon-icon" name="create-outline"></ion-icon>
+                    <svg class="post__time-icon">
+                        <use xlink:href="../img/svg/sprite.svg#icon-add-solid"></use>
+                    </svg>
                 </span>
                 <span class="list__item-link--title">Create Posts</span>
             </button>
@@ -80,7 +86,9 @@
         <li class="list__item">
             <button type="button" class="list__item-link Notifications" value="Notifications">
                 <span class="list__item-link--icon">
-                    <ion-icon class="icon-icon" name="notifications-outline"></ion-icon>
+                    <svg class="post__time-icon">
+                        <use xlink:href="../img/svg/sprite.svg#icon-bell2"></use>
+                    </svg>
                 </span>
                 <span class="list__item-link--title">Notifications</span>
             </button>
@@ -88,7 +96,9 @@
         <li class="list__item">
             <button type="button" class="list__item-link Help" value="Help">
                 <span class="list__item-link--icon">
-                    <ion-icon class="icon-icon" name="help-outline"></ion-icon>
+                    <svg class="post__time-icon">
+                        <use xlink:href="../img/svg/sprite.svg#icon-help"></use>
+                    </svg>
                 </span>
                 <span class="list__item-link--title">Help</span>
             </button>
@@ -96,7 +106,9 @@
         <li class="list__item">
             <button type="button" class="list__item-link Settings" value="Settings">
                 <span class="list__item-link--icon">
-                    <ion-icon class="icon-icon" name="settings-outline"></ion-icon>
+                    <svg class="post__time-icon">
+                        <use xlink:href="../img/svg/sprite.svg#icon-wrench"></use>
+                    </svg>
                 </span>
                 <span class="list__item-link--title">Settings</span>
             </button>
@@ -104,7 +116,9 @@
         <li class="list__item">
             <a class="list__item-link logOut">
                 <span class="list__item-link--icon">
-                    <ion-icon class="icon-icon" name="log-out-outline"></ion-icon>
+                    <svg class="post__time-icon">
+                        <use xlink:href="../img/svg/sprite.svg#icon-switch2"></use>
+                    </svg>
                 </span>
                 <span class="list__item-link--title">Sign Out</span>
             </a>
