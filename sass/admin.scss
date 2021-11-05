@@ -8,6 +8,8 @@
 
 @import './composition/buttons';
 @import './composition/_cards';
+@import './composition/checkbox_toggle';
+@import './composition/custom_select';  
 @import './composition/_nav';
 @import './composition/post_cards';
 @import './composition/new_customer_cards';
@@ -15,7 +17,11 @@
 @import './composition/table';
 @import './composition/_topbar';
 @import './composition/_user_img';
+@import './composition//form_input_animations';
+@import './composition/progress_bar';
+@import './composition/image_upload';
   
-@import './layout/admin'; 
+@import './layout/admin';
+@import './layout/multi_step_form';
 
 @import './pages/admin'

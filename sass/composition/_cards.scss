@@ -34,8 +34,9 @@
             }
             &--icon {
                 .icon-icon {
-                    font-size: 4.8rem;
-                    color: var(--color-dark-2);
+                    height: 4.8rem;
+                    width: 4.8rem;
+                    fill: var(--color-dark-2);
                 }
             }
         }
@@ -48,6 +49,7 @@
             &--number,
             &--name,
             &--icon > .icon-icon {
+                fill: var(--color-light-1);
                 color: var(--color-light-1);
             }
         }

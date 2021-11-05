@@ -67,7 +67,7 @@
             <button type="button" class="list__item-link ViewPost" value="ViewPost">
                 <span class="list__item-link--icon">
                     <svg class="icon-svg">
-                        <use xlink:href="../img/svg/sprite.svg#icon-home5"></use>
+                        <use xlink:href="../img/svg/sprite.svg#icon-grid"></use>
                     </svg>
                 </span>
                 <span class="list__item-link--title">View Posts</span>

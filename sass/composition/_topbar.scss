@@ -8,12 +8,14 @@
     &--toggle {
         position: relative;
         top: 0;
-        width: 6rem;
-        height: 6rem;
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 4rem;
-        cursor: pointer;
+        .icon-menu {
+            width: 4rem;
+            height: 4rem;
+            cursor: pointer;
+            fill: var(--color-dark-2);
+        }
     }
 }

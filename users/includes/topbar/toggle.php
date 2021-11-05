@@ -1,3 +1,5 @@
 <div class="topbar--toggle">
-    <ion-icon class="icon-icon" name="menu-outline"></ion-icon>
+    <svg class="icon-menu">
+        <use xlink:href="../img/svg/sprite.svg#icon-menu"></use>
+    </svg>
 </div>

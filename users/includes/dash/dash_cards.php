@@ -23,18 +23,26 @@
                 <?php
                 if ($row['type'] === 'daily views') { 
                     ?>
-                    <ion-icon class="icon-icon" name="eye-outline"></ion-icon>
+                    <svg class="icon-icon">
+                        <use xlink:href="../img/svg/sprite.svg#icon-eye"></use>
+                    </svg>
                 <?php
                 } elseif ($row['type'] === 'comments') { 
                     ?>
-                    <ion-icon class="icon-icon" name="chatbubbles-outline"></ion-icon>
+                    <svg class="icon-icon">
+                        <use xlink:href="../img/svg/sprite.svg#icon-comment"></use>
+                    </svg>
                 <?php
                 } elseif ($row['type'] === 'stories') {
                      ?>
-                    <ion-icon class="icon-icon" name="documents-outline"></ion-icon>
+                    <svg class="icon-icon">
+                        <use xlink:href="../img/svg/sprite.svg#icon-books"></use>
+                    </svg>
                 <?php
                  } elseif ($row['type'] === 'connections') { ?>
-                    <ion-icon class="icon-icon" name="person-add-outline"></ion-icon>
+                    <svg class="icon-icon">
+                        <use xlink:href="../img/svg/sprite.svg#icon-users2"></use>
+                    </svg>
                 <?php } 
                 ?>
 
