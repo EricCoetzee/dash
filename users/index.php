@@ -2,13 +2,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php $username = 'admin'; ?>
+
 <head>
     <?php include('./includes/head.php') ?>
     <script src="../dist/scripts/loadMenu.js"></script>
+    <script src="../dist/scripts/mulForm.js"></script>
 </head>
 
 <body>
-    <section class="admin-container"> 
+    <section class="admin-container">
         <!-- Navigation Menu -->
         <?php include('./includes/nav.php') ?>
         <!-- Main sections -->
@@ -24,10 +26,7 @@
             </div>
         </main>
     </section>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="../dist/scripts/dash.js"></script>
-    <script src="../dist/scripts/mulForm.js"></script>
 </body>
 
 </html>

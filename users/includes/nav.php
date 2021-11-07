@@ -1,7 +1,7 @@
 <nav class="navigation">
     <ul class="list">
         <li class="list__item">
-            <a class="list__item-link">
+            <a href="../" class="list__item-link">
                 <span class="list__item-link--icon">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon-svg icon-svg--1" viewBox="0 0 96.71 90.26">
                         <defs>
@@ -9,29 +9,23 @@
                                 .BG03-cls-1 {
                                     fill: #672b82;
                                 }
-
                                 .BG03-cls-2 {
                                     fill: #672b82;
                                 }
-
                                 .BG03-cls-3 {
                                     fill: #f1ba33;
                                 }
-
                                 .BG03-cls-5 {
                                     fill: #672b82;
                                 }
-
                                 .BG03-cls-4 {
                                     fill: #f1ba33;
                                 }
-
                                 .BG03-cls-5 {
                                     font-size: 6.27px;
                                     font-family: Gotham-Medium, Gotham;
                                     font-weight: 500;
                                 }
-
                                 .BG03-cls-6 {
                                     letter-spacing: -.04em;
                                 }
@@ -53,66 +47,30 @@
                 </span>
             </a>
         </li>
-        <li class="list__item">
-            <button type="button" class="list__item-link" value="Dash">
-                <span class="list__item-link--icon">
-                    <svg class="icon-svg">
-                        <use xlink:href="../img/svg/sprite.svg#icon-home5"></use>
-                    </svg>
-                </span>
-                <span class="list__item-link--title Dash">Dashboard</span>
-            </button>
-        </li>
-        <li class="list__item">
-            <button type="button" class="list__item-link ViewPost" value="ViewPost">
-                <span class="list__item-link--icon">
-                    <svg class="icon-svg">
-                        <use xlink:href="../img/svg/sprite.svg#icon-grid"></use>
-                    </svg>
-                </span>
-                <span class="list__item-link--title">View Posts</span>
-            </button>
-        </li>
-        <li class="list__item">
-            <button type="button" class="list__item-link CreatePost" value="CreatePost">
-                <span class="list__item-link--icon">
-                    <svg class="icon-svg">
-                        <use xlink:href="../img/svg/sprite.svg#icon-add-solid"></use>
-                    </svg>
-                </span>
-                <span class="list__item-link--title">Create Posts</span>
-            </button>
-        </li>
-        <li class="list__item">
-            <button type="button" class="list__item-link Notifications" value="Notifications">
-                <span class="list__item-link--icon">
-                    <svg class="icon-svg">
-                        <use xlink:href="../img/svg/sprite.svg#icon-bell2"></use>
-                    </svg>
-                </span>
-                <span class="list__item-link--title">Notifications</span>
-            </button>
-        </li>
-        <li class="list__item">
-            <button type="button" class="list__item-link Help" value="Help">
-                <span class="list__item-link--icon">
-                    <svg class="icon-svg">
-                        <use xlink:href="../img/svg/sprite.svg#icon-help"></use>
-                    </svg>
-                </span>
-                <span class="list__item-link--title">Help</span>
-            </button>
-        </li>
-        <li class="list__item">
-            <button type="button" class="list__item-link Settings" value="Settings">
-                <span class="list__item-link--icon">
-                    <svg class="icon-svg">
-                        <use xlink:href="../img/svg/sprite.svg#icon-wrench"></use>
-                    </svg>
-                </span>
-                <span class="list__item-link--title">Settings</span>
-            </button>
-        </li>
+        <?php
+        $db = new Database();
+        $getMenu = $db->getRows("SELECT * FROM menu WHERE item_active = 1 LIMIT 8");
+        foreach ($getMenu as $row) {
+            $menu_item = $row['menu_item'];
+            if ($menu_item === 'browse') {
+                $anchor = '../';
+            } else {
+                $anchor = '?menu=' . $menu_item;
+            }
+            $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+        ?>
+
+            <li class="list__item">
+                <a href="<?php echo $anchor ?>" class="list__item-link <?php echo "?".parse_url($url, PHP_URL_QUERY) ?>" value="<?php echo $menu_item; ?>">
+                    <span class="list__item-link--icon">
+                        <svg class="icon-svg">
+                            <use xlink:href="../img/svg/sprite.svg#icon-<?php echo $menu_item; ?>"></use>
+                        </svg>
+                    </span>
+                    <span class="list__item-link--title <?php echo $menu_item; ?>"><?php echo strtoupper($menu_item); ?></span>
+                </a>
+            </li>
+        <?php } ?>
         <li class="list__item">
             <a class="list__item-link logOut">
                 <span class="list__item-link--icon">

@@ -1,4 +1,12 @@
-<?php include('../../includes/db/init.php') ?>
+<?php
+    include('../../includes/db/init.php');
+    $url = $_SERVER["REQUEST_URI"];
+    $query = parse_url($url, PHP_URL_QUERY);
+    echo $query;
+    if($query = "test=3"){
+       echo $_SERVER["REQUEST_URI"];
+    }
+?>
 
 <form action="#" class="post-form">
     <h1 class="heading-secondary heading-secondary--center-auto">Create Post</h1>
@@ -26,7 +34,7 @@
             </select>
         </div>
         <div class="">
-            <a href="#" class="btns-group__btn btns-group__btn-next btns-group__btn--one">Next</a>
+            <a href="?call=1" class="btns-group__btn btns-group__btn-next btns-group__btn--one">Next</a>
         </div>
     </div>
     <div class="form-step">

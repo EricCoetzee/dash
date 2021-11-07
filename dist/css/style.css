@@ -23,21 +23,21 @@ breakpoint choices
 
  */
 :root {
-  --color-main: #672682d9;
+  --color-main: #2196f3;
   --color-main-2: #f3bb35;
-  --color-secondary: #2196f3;
+  --color-secondary: #672682d9 ;
   --color-secondary-2: #4e2682d9;
   --color-tertairy: #161614;
   --color-light-1: #fff;
   --color-gray: #f5f5f5;
-  --color-dark-1: #222;
+  --color-dark-1: rgb(82, 80, 80);
   --color-dark-2: #999999;
   --color-light-1: #fff;
   --color-light-2: #f1f1f1;
   --color-light-3:#eeeeee;
   --color-light-4:#dad6d6a1;
   --color-dark-1: #000;
-  --color-dark-2: #333;
+  --color-dark-2: rgb(150, 148, 148);
   --color-dark-3: #2d3436;
   --browsing-sign-up-btn: var(--color-light-1);
   --browsing-sign-up-btn-hover: var(--color-main-2);
@@ -46,7 +46,7 @@ breakpoint choices
   --color-success: #8de02c ;
   --color-pending: #f3ca3f;
   --color-inprocess: #1795ce ;
-  --gradient-color-4: linear-gradient(to right bottom, var(--color-main), var(--color-main-2)) ;
+  --gradient-color-4: linear-gradient(to right bottom, var(--color-secondary), var(--color-main-2)) ;
   --gradient-color-5: linear-gradient(to left bottom, var(--color-main), var(--color-main-2)) ;
   --heading-font: Georgia, sans-serif serif;
   --subheading-font: Verdana, "Times New Roman", Times;
@@ -89,7 +89,8 @@ breakpoint choices
   box-sizing: border-box; }
 
 html {
-  font-size: 11px; }
+  font-size: 11px;
+  scroll-behavior: smooth; }
 
 body {
   min-height: 100vh;
@@ -329,7 +330,7 @@ body {
       width: 4.8rem;
       fill: var(--color-dark-2); }
     .card-box__card:hover {
-      background-color: var(--color-secondary); }
+      background-image: var(--gradient-color-4); }
     .card-box__card:hover .card-box__card__info--number, .card-box__card:hover .card-box__card__info--name,
     .card-box__card:hover .card-box__card__info--icon > .icon-icon {
       fill: var(--color-light-1);
@@ -1090,7 +1091,7 @@ input:checked[type="checkbox"]:before {
     height: 4px;
     color: var(--color-main);
     width: 100%;
-    background-color: #dcdcdc;
+    background-color: #b8b5b5;
     z-index: -1; }
   .progressbar__progress {
     background-image: linear-gradient(to right bottom, var(--color-main), var(--color-main-2));
@@ -1261,7 +1262,8 @@ input {
   border: 1px solid #ccc;
   border-radius: 0.35rem;
   min-height: 48rem;
-  padding: 1.5rem; }
+  padding: 1.5rem;
+  z-index: 0; }
   .post-form__label-heading {
     color: #555353;
     display: block;

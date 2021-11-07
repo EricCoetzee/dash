@@ -1,13 +1,13 @@
 :root {
     // colors
-    --color-main: #672682d9;//(purple)
+    --color-main: #2196f3;//(purple)
     --color-main-2: #f3bb35;//(yellow)
-    --color-secondary: #2196f3;//(yellow) 
+    --color-secondary: #672682d9 ;//(yellow) 
     --color-secondary-2: #4e2682d9;//(purple)
     --color-tertairy: #161614;//(black)
     --color-light-1: #fff;
     --color-gray: #f5f5f5;
-    --color-dark-1: #222;
+    --color-dark-1: rgb(82, 80, 80);
     --color-dark-2: #999999;
   
     //web colors
@@ -16,7 +16,7 @@
   --color-light-3:#eeeeee;
   --color-light-4:#dad6d6a1;
   --color-dark-1: #000;
-  --color-dark-2: #333; 
+  --color-dark-2: rgb(150, 148, 148); 
   --color-dark-3: #2d3436; 
   
   // button colors
@@ -38,7 +38,7 @@
    
 
   // Gradiaint color for background
-  --gradient-color-4: linear-gradient(to right bottom, var(--color-main), var(--color-main-2)) ;
+  --gradient-color-4: linear-gradient(to right bottom, var(--color-secondary), var(--color-main-2)) ;
   --gradient-color-5: linear-gradient(to left bottom, var(--color-main), var(--color-main-2)) ;
   
 
