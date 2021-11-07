@@ -9,23 +9,29 @@
                                 .BG03-cls-1 {
                                     fill: #672b82;
                                 }
+
                                 .BG03-cls-2 {
                                     fill: #672b82;
                                 }
+
                                 .BG03-cls-3 {
                                     fill: #f1ba33;
                                 }
+
                                 .BG03-cls-5 {
                                     fill: #672b82;
                                 }
+
                                 .BG03-cls-4 {
                                     fill: #f1ba33;
                                 }
+
                                 .BG03-cls-5 {
                                     font-size: 6.27px;
                                     font-family: Gotham-Medium, Gotham;
                                     font-weight: 500;
                                 }
+
                                 .BG03-cls-6 {
                                     letter-spacing: -.04em;
                                 }
@@ -47,29 +53,27 @@
                 </span>
             </a>
         </li>
-        <?php
-        $db = new Database();
-        $getMenu = $db->getRows("SELECT * FROM menu WHERE item_active = 1 LIMIT 8");
-        foreach ($getMenu as $row) {
-            $menu_item = $row['menu_item'];
-            if ($menu_item === 'browse') {
-                $anchor = '../';
-            } else {
-                $anchor = '?menu=' . $menu_item;
-            }
-            $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-        ?>
 
-            <li class="list__item">
-                <a href="<?php echo $anchor ?>" class="list__item-link <?php echo "?".parse_url($url, PHP_URL_QUERY) ?>" value="<?php echo $menu_item; ?>">
-                    <span class="list__item-link--icon">
-                        <svg class="icon-svg">
-                            <use xlink:href="../img/svg/sprite.svg#icon-<?php echo $menu_item; ?>"></use>
-                        </svg>
-                    </span>
-                    <span class="list__item-link--title <?php echo $menu_item; ?>"><?php echo strtoupper($menu_item); ?></span>
-                </a>
-            </li>
+        <?php
+            $db = new Database();
+            $getMenu = $db->getRows("SELECT * FROM menu WHERE item_active = 1 LIMIT 8");
+            foreach($getMenu as $row){
+                $page_item = $row['menu_item'];
+                $dash_links = "?page=". $page_item;
+                if($page_item === "browse"){
+                    $dash_links = "../";
+                }
+        ?>
+        <li class="list__item">
+            <a href="<?php echo $dash_links ?>" class="list__item-link <?php echo $page_item; ?>" value="Dash">
+                <span class="list__item-link--icon">
+                    <svg class="icon-svg">
+                        <use xlink:href="../img/svg/sprite.svg#icon-<?php echo $page_item; ?>"></use>
+                    </svg>
+                </span>
+                <span class="list__item-link--title Dash"><?php echo strtoupper($page_item); ?></span>
+            </a>
+        </li>
         <?php } ?>
         <li class="list__item">
             <a class="list__item-link logOut">
