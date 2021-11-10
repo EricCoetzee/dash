@@ -49,7 +49,7 @@ if (isset($_COOKIE['EzeeMax']) && isset($_COOKIE['ezeemaxMail']) && isset($_COOK
                     ?>
                 <tr class="details__recent-activities__table__body__row">
                     <td class="td details__recent-activities__table__body__row--info"><?php echo ucfirst($i['type']); ?></td>
-                    <td class="td details__recent-activities__table__body__row--info"><img class="details__recent-activities__table__body__row--info-img" src="../img/<?php echo $author_img ?>"></td>
+                    <td class="td details__recent-activities__table__body__row--info"><img class="details__recent-activities__table__body__row--info-img" src="../../img/<?php echo $author_img ?>"></td>
                     <?php if ($i['comment_id'] > 0) { ?>
                     <td class="td details__recent-activities__table__body__row--info">
                     <?php

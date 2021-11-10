@@ -24,24 +24,24 @@
                 if ($row['type'] === 'daily views') { 
                     ?>
                     <svg class="icon-icon">
-                        <use xlink:href="../img/svg/sprite.svg#icon-eye"></use>
+                        <use xlink:href="../../img/svg/sprite.svg#icon-eye"></use>
                     </svg>
                 <?php
                 } elseif ($row['type'] === 'comments') { 
                     ?>
                     <svg class="icon-icon">
-                        <use xlink:href="../img/svg/sprite.svg#icon-comment"></use>
+                        <use xlink:href="../../img/svg/sprite.svg#icon-comment"></use>
                     </svg>
                 <?php
                 } elseif ($row['type'] === 'stories') {
                      ?>
                     <svg class="icon-icon">
-                        <use xlink:href="../img/svg/sprite.svg#icon-books"></use>
+                        <use xlink:href="../../img/svg/sprite.svg#icon-books"></use>
                     </svg>
                 <?php
                  } elseif ($row['type'] === 'connections') { ?>
                     <svg class="icon-icon">
-                        <use xlink:href="../img/svg/sprite.svg#icon-users2"></use>
+                        <use xlink:href="../../img/svg/sprite.svg#icon-users2"></use>
                     </svg>
                 <?php } 
                 ?>

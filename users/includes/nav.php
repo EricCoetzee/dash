@@ -1,7 +1,7 @@
 <nav class="navigation">
     <ul class="list">
         <li class="list__item">
-            <a href="../" class="list__item-link">
+            <a href="../../" class="list__item-link">
                 <span class="list__item-link--icon">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon-svg icon-svg--1" viewBox="0 0 96.71 90.26">
                         <defs>
@@ -55,31 +55,31 @@
         </li>
 
         <?php
-            $db = new Database();
-            $getMenu = $db->getRows("SELECT * FROM menu WHERE item_active = 1 LIMIT 8");
-            foreach($getMenu as $row){
-                $page_item = $row['menu_item'];
-                $dash_links = "?page=". $page_item;
-                if($page_item === "browse"){
-                    $dash_links = "../";
-                }
+        $db = new Database();
+        $getMenu = $db->getRows("SELECT * FROM menu WHERE item_active = 1 LIMIT 8");
+        foreach ($getMenu as $row) {
+            $page_item = $row['menu_item'];
+            $dash_links = $page_item;
+            if ($page_item === "browse") {
+                $dash_links = "../../";
+            }
         ?>
-        <li class="list__item">
-            <a href="<?php echo $dash_links ?>" class="list__item-link <?php echo $page_item; ?>" value="Dash">
-                <span class="list__item-link--icon">
-                    <svg class="icon-svg">
-                        <use xlink:href="../img/svg/sprite.svg#icon-<?php echo $page_item; ?>"></use>
-                    </svg>
-                </span>
-                <span class="list__item-link--title Dash"><?php echo strtoupper($page_item); ?></span>
-            </a>
-        </li>
+            <li class="list__item <?php echo $page_item; ?>">
+                <a href="<?php echo $dash_links ?>" class="list__item-link  <?php echo $page_item; ?>--link">
+                    <span class="list__item-link--icon">
+                        <svg class="icon-svg">
+                            <use xlink:href="../../img/svg/sprite.svg#icon-<?php echo $page_item; ?>"></use>
+                        </svg>
+                    </span>
+                    <span class="list__item-link--title <?php echo $page_item; ?>--title"><?php echo strtoupper($page_item); ?></span>
+                </a>
+            </li>
         <?php } ?>
         <li class="list__item">
             <a class="list__item-link logOut">
                 <span class="list__item-link--icon">
                     <svg class="icon-svg">
-                        <use xlink:href="../img/svg/sprite.svg#icon-switch2"></use>
+                        <use xlink:href="../../img/svg/sprite.svg#icon-switch2"></use>
                     </svg>
                 </span>
                 <span class="list__item-link--title">Sign Out</span>

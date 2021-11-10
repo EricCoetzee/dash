@@ -20,6 +20,7 @@
         &:hover &-link,
         &.hovered &-link {
             color: var(--color-secondary);
+            
             & .icon-svg{
                 fill: var(--color-secondary);
             }
