@@ -4,7 +4,7 @@ const progress = document.getElementById("progress");
 const formSteps = document.querySelectorAll(".form-step");
 const progressSteps = document.querySelectorAll(".progressbar__progress-step");
 
-
+  
 var formStepsNum = 0;
 
 nextBtns.forEach((btn) => {
@@ -12,7 +12,7 @@ nextBtns.forEach((btn) => {
     formStepsNum++;
     console.log('working')
     updateFormSteps();
-    updateProgressbar();
+    updateProgressbar(); 
     
   });
 });

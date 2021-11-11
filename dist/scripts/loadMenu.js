@@ -8,10 +8,19 @@ document.addEventListener("DOMContentLoaded", function (event) {
   const page = url_string.split("/").pop();
   // const page = urlParams.get("page")
   // items.forEach(element => {
+
+  console.log(page);
+    if(page === 'create_post'){
+      document.querySelector("."+ page).classList.add('hovered');
+      document.querySelector("."+ page+"--link").style.cursor = "default";
+      document.querySelector("."+ page+"--link").href = "javascript:void(0)";
+      document.querySelector("."+ page+"--link").style.textDecoration = "line-through";
+      document.querySelector("."+ page+"--link").style.textDecorationThickness = "20%";
+      document.querySelector("."+ page+"--title").style.fontWeight = "900";
+    }
   for (let index = 1; index < items.length - 2; index++) {
-    if (page) {
+    if (page !== 'create_post') {
       document.body.addEventListener("onload", showResult(page), false);
-       console.log(page)
       function showResult(str) {
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function () {
