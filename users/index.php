@@ -71,6 +71,7 @@
         </main>
     </section>
     <script src="../../dist/scripts/dash.js"></script>
+    <script src="../../dist/scripts/postFormval.js"></script>
 </body>
 
 </html>

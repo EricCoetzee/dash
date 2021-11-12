@@ -1,0 +1,126 @@
+.valid {
+    position: relative;
+}
+.valid.success select {
+    box-shadow: 0 0 6px var(--color-success) !important;
+}
+
+.valid.success input {
+    box-shadow: 0 0 6px var(--color-success) !important;
+}
+.valid.success textarea {
+    box-shadow: 0 0 6px 6px var(--color-success);
+}
+
+.valid.error select {
+    box-shadow: 0 0 6px var(--color-danger);
+}
+.valid.error textarea {
+    box-shadow: 0 0 6px var(--color-danger);
+}
+
+.valid.error > input {
+    box-shadow: 0 0 6px var(--color-danger);
+}
+.indicator {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.valid .currency {
+    position: absolute;
+    top: 0px;
+    font-size: 20px;
+    color: var(--color-light-1);
+    left: 0px;
+    font-family: Raleway;
+    background-color: var(--color-light-4);
+    width: 30px;
+    text-align: center;
+    height: 40px;
+}
+
+.the-price {
+    padding-left: 37px !important;
+}
+
+.valid .the-price:focus + .currency {
+    background-color: var(--color-secondary);
+    transition: 0.3s ease-in-out;
+    outline: var(--color-secondary) !important;
+}
+.phone-number {
+    padding-left: 37px !important;
+}
+.valid .number-icon {
+    position: absolute;
+    top: 0px;
+    font-size: 20px;
+    color: var(--color-light-1);
+    left: 0px;
+    width: 30px;
+    text-align: center;
+    background-color: var(--color-light-4);
+    height: 40px;
+}
+.valid .phone-number:focus + .number-icon {
+    background-color: var(--color-secondary);
+    transition: 0.3s ease-in-out;
+    outline: var(--color-secondary) !important;
+}
+.email-input {
+    padding-left: 40px !important;
+}
+.valid .email-icon {
+    position: absolute;
+    top: 0px;
+    font-size: 20px;
+    color: var(--color-light-1);
+    left: 0px;
+    width: 30px;
+    text-align: center;
+    background-color: var(--color-light-4);
+    height: 40px;
+}
+.valid .email-input:focus + .email-icon {
+    background-color: var(--color-secondary);
+    transition: 0.3s ease-in-out;
+    outline: var(--color-secondary) !important;
+}
+.valid svg {
+    position: absolute;
+    visibility: hidden;
+    bottom: 3.5rem;
+    left: 82%;
+    height: 2.5rem;
+    width: 2.5rem;
+}
+.valid small {
+    visibility: hidden;
+    font-size: 16px;
+}
+.valid.success .icon-check {
+    position: absolute;
+    visibility: visible;
+    fill: var(--color-success);
+}
+
+.valid.error .icon-exclamation {
+    position: absolute;
+    visibility: visible;
+    border-radius: 50%;
+    fill: var(--color-danger);
+}
+.valid.error small {
+    visibility: visible;
+    color: var(--color-danger);
+}
+.valid.success small {
+    visibility: visible;
+    color: var(--color-light-1);
+    font-size: 1.8rem;
+    font-weight: 900;
+    padding: 0.5rem;
+    background-color: #63d471;
+    background-image: linear-gradient(315deg, #63d471 0%, #233329 74%);
+}

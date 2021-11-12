@@ -39,7 +39,7 @@
                     </div>
                     <figcation class="post__details">
                         <h2 class="post__title"><a href="../../posts/post/<?php echo $row['post_id']; ?>" class="post__title-link"><?php echo substr(strtoupper($row['title']), 0, 19);  ?></a></h2>
-                        <p class="post__description"><?php echo substr($row['description'], 0, 125); ?></p>
+                        <p class="post__description"><?php echo substr($row['descript'], 0, 125); ?></p>
                     </figcation>
                     <div class="post__btn-box">
                         <div class="post__stats">
@@ -54,7 +54,7 @@
     <?php }
     }
     $db = new Database();
-    $getRows = $db->getRows("SELECT * FROM forms WHERE username = '$user' ORDER BY DATE DESC LIMIT 2");
+    $getRows = $db->getRows("SELECT * FROM forms WHERE username = '$user' ORDER BY DATE ASC LIMIT 2");
     die_rview($getRows);
     $db->Disconnect();
     ?>

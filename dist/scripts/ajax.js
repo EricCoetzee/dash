@@ -12,7 +12,7 @@ function fx(str) {
   var s1 = document.getElementById("qu").value;
   s1 = s1.toString();
   if (s1.match(/[']/)) {
-    xmlhttp.open("GET", "./ajax/call_ajax.php?n=" + s1, false);
+    xmlhttp.open("GET", "../ajax/call_ajax.php?n=" + s1, false);
     xmlhttp.send();
   } else {
     var xmlhttp;
@@ -40,7 +40,7 @@ function fx(str) {
         document.querySelector('#textbox-clr').textContent = "X";
       }
     }
-    xmlhttp.open("GET", "./ajax/call_ajax.php?n=" + s1, true);
+    xmlhttp.open("GET", "../ajax/call_ajax.php?n=" + s1, true);
     xmlhttp.send();
   }
 }

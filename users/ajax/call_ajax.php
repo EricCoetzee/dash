@@ -12,10 +12,10 @@ function die_r($value)
             $image = 'image.png';
         }
         $s = $s . "
-    <a class='link-p-colr' href='../posts/post/" . $row['post_id'] . "'>
+    <a class='link-p-colr' href='../../posts/post/" . $row['post_id'] . "'>
         <div class='live-outer'>
                 <div class='live-im'>
-                    <img src='../img/" . $image . "'/>
+                    <img src='../../img/" . $image . "'/>
                 </div>
                 <div class='live-product-det'>
                     <div class='live-product-name'>
