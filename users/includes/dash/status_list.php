@@ -19,7 +19,7 @@
             <div class="form-step form-step-active">
                 <label class="post-form__label-heading" for="category" class="post-form__label">Scroll for more categories
                     <div class="valid">
-                        <select class="cat-select__selected" id="category" name="category" size="5" onclick="validCategory()" onchange="validCategory()">
+                        <select class="cat-select__selected" id="category" name="category" size="5" onclick="checkForm()" onchange="checkForm()">
                             <?php
                             $db = new Database();
                             $moreCats = $db->getRows("SELECT DISTINCT(cat) FROM cats ORDER BY cat ");
@@ -38,42 +38,52 @@
                     </div>
                 </label>
                 <div class="">
-                    <a href="javascript:void(0)" class="btns-group__btn btns-group__btn-next btns-group__btn--one">Next</a>
-                </div>
-                
-                <div class="indicator">
-                    <div class="valid">
-                        <div id="catBottomMsg"></div>
-                        <small id="cat-top-indication" style="font-size: 17px; color:#fff; background-color:firebrick; padding:10px; width:100%; text-align:center;">Error Message</small>
-                    </div>
+                    <a href="javascript:void(0)" onclick="checkForm()" class="btns-group__btn btns-group__btn-next btns-group__btn--one">Next</a>
                 </div>
             </div>
             <div class="form-step">
                 <div class="form-step__grid-setup">
-                    <div>
-                        <label class="post-form__label-heading" for="gender">Gender</label>
-                        <select class="cat-select__selected--no-bar" id="gender" size="3" name="gender">
-                            <?php
-                            $db = new Database();
-                            $moreCats = $db->getRows("SELECT DISTINCT(gender) FROM forms ORDER BY gender");
-                            foreach ($moreCats as $row) {
-                            ?>
-                                <option value="<?php echo strtolower($row['gender']); ?>"><?php echo $row['gender']; ?></option>
-                            <?php } ?>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="post-form__label-heading" for="age">Age Group</label>
-                        <select class="cat-select__selected--no-bar" id="age" name="age" size="3">
-                            <?php
-                            $db = new Database();
-                            $moreCats = $db->getRows("SELECT DISTINCT(age_group) FROM forms ORDER BY age_group");
-                            foreach ($moreCats as $row) {
-                            ?>
-                                <option value="<?php echo strtolower($row['age_group']); ?>"><?php echo $row['age_group']; ?></option>
-                            <?php } ?>
-                        </select>
-                    </div>
+                    <label class="post-form__label-heading" for="gender">Gender
+                        <div class="valid">
+                            <select class="cat-select__selected--no-bar" onclick="checkForm()" onchange="checkForm()" id="gender" size="3" name="gender">
+                                <?php
+                                $db = new Database();
+                                $moreCats = $db->getRows("SELECT DISTINCT(gender) FROM forms ORDER BY gender");
+                                foreach ($moreCats as $row) {
+                                ?>
+                                    <option value="<?php echo strtolower($row['gender']); ?>"><?php echo $row['gender']; ?></option>
+                                <?php } ?>
+                            </select>
+                            <small>Error Message</small>
+                            <svg class="icon-check">
+                                <use xlink:href="../../img/svg/sprite.svg#icon-check-circle"></use>
+                            </svg>
+                            <svg class="icon-exclamation">
+                                <use xlink:href="../../img/svg/sprite.svg#icon-info-with-circle"></use>
+                            </svg>
+                        </div>
+                    </label>
+
+                    <label class="post-form__label-heading" for="age">Age Group
+                        <div class="valid">
+                            <select class="cat-select__selected--no-bar" onclick="checkForm()" onchange="checkForm()" id="age" name="age" size="3">
+                                <?php
+                                $db = new Database();
+                                $moreCats = $db->getRows("SELECT DISTINCT(age_group) FROM forms ORDER BY age_group");
+                                foreach ($moreCats as $row) {
+                                ?>
+                                    <option value="<?php echo strtolower($row['age_group']); ?>"><?php echo $row['age_group']; ?></option>
+                                <?php } ?>
+                            </select>
+                            <small>Error Message</small>
+                            <svg class="icon-check">
+                                <use xlink:href="../../img/svg/sprite.svg#icon-check-circle"></use>
+                            </svg>
+                            <svg class="icon-exclamation">
+                                <use xlink:href="../../img/svg/sprite.svg#icon-info-with-circle"></use>
+                            </svg>
+                        </div>
+                    </label>
                 </div>
                 <div class="form__group">
                     <input type="url" name="yurl" placeholder="Youtube URL" id="yurl" class="form__input">
@@ -81,7 +91,7 @@
                 </div>
                 <div class="btns-group">
                     <a href="javascript:void(0)" class="btns-group__btn btns-group__btn-prev">Previous</a>
-                    <a href="javascript:void(0)" class="btns-group__btn btns-group__btn-next">Next</a>
+                    <a href="javascript:void(0)" onclick="checkForm()" class="btns-group__btn btns-group__btn-next">Next</a>
                 </div>
             </div>
             <div class="form-step">
@@ -164,6 +174,14 @@
                     <div><input type="submit" value="Submit" class="btns-group__btn" /></div>
                 </div>
             </div>
+
+            <!-- <div class="indicator">
+                <div class="valid">
+                    <div id="postBottomMsg"></div>
+                    <small id="post-top-indication" style="font-size: 1.5rem; color:#fff; background-color:firebrick; padding:10px; width:100%; text-align:center;">Error Message</small>
+                </div>
+            </div> -->
+
         </form>
     <?php } ?>
 </div>

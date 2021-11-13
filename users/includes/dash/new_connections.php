@@ -4,7 +4,7 @@
     </div>
     <table class="details__recent-connections__table">
     <?php
-     $username = 'admin';
+     $username = 'EzeeMax';
      $db = new Database();
      $getRows = $db->getRows("SELECT * FROM comments WHERE type = 'connection' AND post_author = '$username ' ORDER BY date DESC");
      foreach ($getRows as $row) {

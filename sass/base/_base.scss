@@ -3,11 +3,10 @@
     padding: 0;
     box-sizing: border-box;
 }
-html{
+html, body{
     font-size: 11px;
     scroll-behavior: smooth;
-}
-body{
     min-height: 100vh; 
+    max-width: 100%;
     overflow-x: hidden;
 }

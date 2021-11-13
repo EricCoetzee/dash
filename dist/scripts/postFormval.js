@@ -1,5 +1,7 @@
 const postForm = document.querySelector('.post-form');
 const category = document.querySelector('.cat-select__selected');
+const gender = document.querySelector('#gender');
+const age = document.querySelector('#age');
 // const bikeModel = document.getElementById('bikeModel');
 // const bikeMileage = document.getElementById('bikeMileage');
 // const bikeYear = document.getElementById('bikeYear');
@@ -7,34 +9,49 @@ const category = document.querySelector('.cat-select__selected');
 // const bikeCity = document.getElementById('bikeCity');
 // const bikeArea = document.getElementById('bikeArea');
 // const bikeTitle = document.getElementById('input-title3');
-// const bikeDescription = document.getElementById('description3');
+// const bikeDescription = document.getElementById('description3'); 
 // const BikePricingSelect = document.getElementById('ddlModels3');
 // const bikePrice = document.getElementById('input-amount3');
 // const bikePhoneNumber = document.getElementById('bike-input-phone-number');
 // const bikeEmail = document.getElementById('bike-input-email');  
 const nextBtn = document.querySelectorAll(".btns-group__btn-next");
 
-nextBtn.forEach( () => {
-    
-});
 
-// const bikeBottomMsg = document.getElementById('bikeBottomMsg');
+const postBottomMsg = document.getElementById('postBottomMsg');
 
-function validCategory(){
-    if(category.value !== ""){
-        category.style.border = "1px solid var(--success-color)"
+function validCategory() {
+    if (category.value !== "") {
+        category.style.border = "1px solid var(--color-success)"
         // invalidBikeModel()
         setSuccessFor(category, 'Valid Category')
-    }else{
+    } else {
         setErrorFor(category, 'Please select category')
     }
 }
 
-// function invalidBikeModel(){
-//     if(bikeModel.value === ""){
-//         setErrorFor(bikeModel, 'Please select motorcycle model')
-//     }
-// }
+function validGender() {
+    if (gender.value !== "") {
+        gender.style.border = "1px solid var(--color-success)"
+        // invalidBikeModel()
+        setSuccessFor(gender, 'Valid Gender')
+    } else {
+        setErrorFor(gender, 'Select Gender')
+    }
+}
+function validAge() {
+    if (age.value !== "") {
+        age.style.border = "1px solid var(--color-success)"
+        // invalidBikeModel()
+        setSuccessFor(age, 'Valid Age')
+    } else {
+        setErrorFor(age, 'Select Age')
+    }
+}
+
+
+
+
+
 
 // function validBikeModel(){
 //     if(bikeModel.value !== ""){
@@ -175,110 +192,27 @@ function validCategory(){
 // bikeForm.addEventListener('submit', e => {
 //     e.preventDefault();    
 //     checkBikeInputs();
-    
+
 // });
 
 
-function checkBikeInputs() {
-    // trim to remove the whitespaces
-
-        const bikeMakeValue = bikeMake.value.trim();
-        const bikeModelValue = bikeModel.value.trim();
-        const bikeMileageValue = bikeMileage.value.trim();
-        const bikeYearValue = bikeYear.value.trim();
-        const bikeProvinceValue = bikeProvince.value.trim();
-        const bikeCityValue = bikeCity.value.trim();
-        const bikeAreaValue = bikeArea.value.trim();
-        const bikeTitleValue = bikeTitle.value.trim();
-        const bikeDescriptionValue = bikeDescription.value.trim();
-        const bikePriceValue = bikePrice.value.trim();
-        const bikePhoneNumberValue = bikePhoneNumber.value.trim();
-        const bikeEmailValue = bikeEmail.value.trim();
-	
-
-    if(bikeMakeValue === '') {
-        setErrorFor(bikeMake, 'Please select make');
-        
-	} 
-
-    if(bikeModelValue === '') {
-        setErrorFor(bikeModel, 'Please select model');
-
-	} 
-
-    if(bikeMileageValue === '') {
-        setErrorFor(bikeMileage, 'Please select mileage');
-        
-        
-	} 
-
-
-    if(bikeYearValue === '') {
-        setErrorFor(bikeYear, 'Please input year');
-          
-	} 
-
-    if(bikeProvinceValue === '') {
-        setErrorFor(bikeProvince, 'Please select your province');
-          
-	} 
-
-    if(bikeCityValue === '' ) {
-        setErrorFor(bikeCity, 'Invalid city');
-          
-	} 
-    if(bikeAreaValue === '') {
-        setErrorFor(bikeArea, 'Invalid area');
-          
-	}
-    
-    if(bikeTitleValue === '' || bikeTitleValue.length < 5 ) {
-        setErrorFor(bikeTitle, 'Please add title');     
-	} 
-
-    if(bikeDescriptionValue === '' || bikeDescriptionValue.length < 20) {
-        setErrorFor(bikeDescription, 'Please add description');
-          
-	} 
-
-    if(!bikePrice.disabled){
-        
-        if(bikePriceValue === '') {
-            setErrorFor(bikePrice, 'Invalid Amount');
-            
-        } 
+function checkForm() {
+    if (validCategory() || validGender() || validAge()) {
+        setErrorFor(postBottomMsg, 'It looks like you forgot something');
     }
-
-    if(bikePhoneNumberValue === '') {
-        setErrorFor(bikePhoneNumber, 'Number is needed');
-          
-	}
-    if(bikeEmailValue === '') {
-        setErrorFor(bikeEmail, 'Email is needed');
-          
-	}else if (!isEmail(bikeEmailValue)) {
-        setErrorFor(bikeEmail, 'Not a valid email');
-    } 
-
-    if( bikeMakeValue === '' || bikeModelValue === '' || bikeMileageValue === '' || bikeYearValue === '' || bikeProvinceValue === '' || bikeCityValue === '' || bikeAreaValue === '' || bikeTitleValue === '' || bikeTitleValue.length < 5 || bikeDescriptionValue === '' || bikeDescriptionValue.length < 20 || bikePhoneNumberValue === '' || bikeEmailValue === '' || !isEmail(bikeEmailValue)){
-        setErrorFor(bikeBottomMsg, 'It looks like you forgot something...');
-    }else if(!bikePrice.disabled && bikePriceValue === ''){
-        setErrorFor(bikeBottomMsg, 'It looks like you forgot something...');
-    }else{
-        document.getElementById('cat-top-indication').style.visibility = "hidden";
-        bikeSubmit.disabled = true;
-        bikeForm.submit();
+    else {
+        document.getElementById('post-top-indication').style.visibility = "hidden";
+        postForm.disabled = true;
+        // bikeForm.submit();
     }
-   
-    
 }
 
 
 function setErrorFor(input, message) {
-	const formControl = input.parentElement;
-	const small = formControl.querySelector('small');
-	formControl.className = 'valid error';
-	small.innerText = message;
+    const formControl = input.parentElement;
+    const small = formControl.querySelector('small');
+    formControl.className = 'valid error';
+    small.innerText = message;
 }
 
 function setSuccessFor(input, message) {
@@ -288,5 +222,5 @@ function setSuccessFor(input, message) {
     small.innerText = message;
 }
 function isEmail(email) {
-	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+    return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
 }

@@ -25,8 +25,9 @@
 .indicator {
     display: flex;
     justify-content: center;
-    margin-top: 10px;
+    margin-top: 2rem;
 }
+
 .valid .currency {
     position: absolute;
     top: 0px;
@@ -97,7 +98,7 @@
 }
 .valid small {
     visibility: hidden;
-    font-size: 16px;
+    font-size: 1.8rem;
 }
 .valid.success .icon-check {
     position: absolute;
@@ -111,16 +112,22 @@
     border-radius: 50%;
     fill: var(--color-danger);
 }
+
 .valid.error small {
     visibility: visible;
-    color: var(--color-danger);
+    color: var(--color-light-1);
+    font-size: 1.5rem;
+    font-weight: 900;
+    padding: 0.5rem;
+    background-color: #3f0d12;
+    background-image: linear-gradient(315deg, #3f0d12 0%, #a71d31 74%);
 }
 .valid.success small {
     visibility: visible;
     color: var(--color-light-1);
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 900;
-    padding: 0.5rem;
+    padding: 0.2rem;
     background-color: #63d471;
     background-image: linear-gradient(315deg, #63d471 0%, #233329 74%);
 }

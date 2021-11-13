@@ -88,12 +88,11 @@ breakpoint choices
   padding: 0;
   box-sizing: border-box; }
 
-html {
+html, body {
   font-size: 11px;
-  scroll-behavior: smooth; }
-
-body {
+  scroll-behavior: smooth;
   min-height: 100vh;
+  max-width: 100%;
   overflow-x: hidden; }
 
 .heading-secondary {
@@ -105,8 +104,7 @@ body {
   color: transparent;
   letter-spacing: .2rem;
   transition: all .2s;
-  font-size: var(--heading-2) !important;
-  padding: 1rem; }
+  font-size: var(--heading-2) !important; }
   @media only screen and (max-width: 56.25em) {
     .heading-secondary {
       font-size: var(--heading-2-med) !important; } }
@@ -125,7 +123,7 @@ body {
   font-weight: 600; }
 
 .heading-2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   text-transform: uppercase;
   color: var(--color-main); }
   .heading-2--light {
@@ -161,7 +159,7 @@ body {
   padding: 1.5rem 3rem;
   display: inline-block;
   border-radius: 10rem;
-  transition: all .2s;
+  transition: all 0.2s;
   position: relative;
   font-size: var(--paragraph) !important;
   max-width: 12rem;
@@ -247,7 +245,7 @@ body {
     background-image: var(--gradient-color-4); }
 
 .bttn::after {
-  content: '';
+  content: "";
   height: 100%;
   width: 100%;
   display: inline-block;
@@ -256,10 +254,10 @@ body {
   top: 0;
   left: 0;
   z-index: -1;
-  transition: all .4s; }
+  transition: all 0.4s; }
 
 .bttn--animated {
-  animation: moveInBottom 1s ease-in-out .75s;
+  animation: moveInBottom 1s ease-in-out 0.75s;
   animation-fill-mode: backwards; }
 
 /* Gradiant Button */
@@ -271,6 +269,7 @@ body {
   .btns-group__btn {
     font-size: 1.7rem;
     padding: 0.75rem;
+    margin-top: 1rem;
     display: block;
     text-decoration: none;
     background-image: linear-gradient(to right bottom, var(--color-main), var(--color-main-2));
@@ -284,7 +283,7 @@ body {
     .btns-group__btn:hover {
       box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--color-main); }
     .btns-group__btn:last-child {
-      max-height: 25.0rem; }
+      max-height: 25rem; }
     .btns-group__btn--one {
       width: 50%;
       margin-left: auto; }
@@ -292,7 +291,7 @@ body {
 .card-box {
   position: relative;
   width: 100%;
-  padding: 2rem;
+  padding: 1rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 3rem; }
@@ -305,7 +304,7 @@ body {
   .card-box__card {
     position: relative;
     background-color: var(--color-light-1);
-    padding: 3rem;
+    padding: 1.3rem;
     box-shadow: 0 0.7rem 2.5rem rgba(0, 0, 0, 0.08);
     display: flex;
     justify-content: space-between;
@@ -375,7 +374,7 @@ input:checked[type="checkbox"]:before {
   .cat-select__selected {
     outline: none;
     border: none;
-    margin: 1.1rem 0;
+    margin: 1.5rem 0;
     box-shadow: -8px 2px 1.3rem rgba(0, 0, 0, 0.25);
     width: 100%;
     scroll-behavior: smooth;
@@ -1096,7 +1095,7 @@ input:checked[type="checkbox"]:before {
 .indicator {
   display: flex;
   justify-content: center;
-  margin-top: 10px; }
+  margin-top: 2rem; }
 
 .valid .currency {
   position: absolute;
@@ -1166,7 +1165,7 @@ input:checked[type="checkbox"]:before {
 
 .valid small {
   visibility: hidden;
-  font-size: 16px; }
+  font-size: 1.8rem; }
 
 .valid.success .icon-check {
   position: absolute;
@@ -1181,14 +1180,19 @@ input:checked[type="checkbox"]:before {
 
 .valid.error small {
   visibility: visible;
-  color: var(--color-danger); }
+  color: var(--color-light-1);
+  font-size: 1.5rem;
+  font-weight: 900;
+  padding: 0.5rem;
+  background-color: #3f0d12;
+  background-image: linear-gradient(315deg, #3f0d12 0%, #a71d31 74%); }
 
 .valid.success small {
   visibility: visible;
   color: var(--color-light-1);
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 900;
-  padding: 0.5rem;
+  padding: 0.2rem;
   background-color: #63d471;
   background-image: linear-gradient(315deg, #63d471 0%, #233329 74%); }
 
@@ -1329,21 +1333,19 @@ input:checked[type="checkbox"]:before {
 .details {
   position: relative;
   width: 100%;
-  padding: 2rem;
   display: grid;
   grid-template-columns: 2fr 1fr;
-  grid-gap: 3rem;
-  margin-top: 1rem; }
+  grid-gap: 3rem; }
   @media only screen and (max-width: 37.25em) {
     .details {
-      grid-template-columns: repeat(1, 1fr); } }
+      grid-template-columns: repeat(1, 1fr);
+      padding: 0; } }
   .details__recent-activities {
     position: relative;
     display: grid;
-    min-height: 50rem;
     background-color: var(--color-light-1);
     box-shadow: 0 0.7rem 2.5rem rgba(0, 0, 0, 0.08);
-    padding: 2rem;
+    padding: 1rem 2rem;
     border-radius: 2rem;
     max-width: 100%; }
     .details__recent-activities__header {
@@ -1352,11 +1354,10 @@ input:checked[type="checkbox"]:before {
       align-items: flex-start; }
     @media only screen and (max-width: 37.25em) {
       .details__recent-activities {
-        overflow-x: auto; } }
+        overflow-x: auto;
+        padding: 1rem; } }
   .details__recent-connections {
     position: relative;
-    display: grid;
-    min-height: 50rem;
     background-color: var(--color-light-5);
     padding: 2rem;
     box-shadow: 0 0.7rem 2.5rem rgba(0, 0, 0, 0.08);
@@ -1374,9 +1375,8 @@ input {
 
 /* Form */
 .post-form {
-  width: clamp(420px, 30%, 430px);
+  width: clamp(380px, 30%, 430px);
   margin: 0 auto;
-  min-height: 48rem;
   padding: .5rem;
   max-width: 100%;
   z-index: 0; }

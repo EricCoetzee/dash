@@ -5,7 +5,7 @@ const formSteps = document.querySelectorAll(".form-step");
 const progressSteps = document.querySelectorAll(".progressbar__progress-step");
 
   
-var formStepsNum = 0;
+var formStepsNum = 0; 
 
 nextBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
