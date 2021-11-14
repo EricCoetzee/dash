@@ -4,7 +4,13 @@
         margin-bottom: 1rem;
     }
     &__input{
-       @include para;
+       @include text(
+        var(--body-font-transform),
+        var(--body-font-size),
+        var(--body-font-weigth),
+        var(--body-font-family),
+        var(--body-font-color)
+    );;
        padding: 1rem 0 0 1.5rem;
        font-family: inherit;
        color: inherit;
@@ -30,7 +36,7 @@
     }
     &__label{
         position: absolute;
-        top: -6px;
+        top: 3.2rem;
         left: 0;
         color: #555353;
        font-size: 1.2rem;

@@ -1,5 +1,11 @@
 .heading {
-    @include heading2;
+    @include text(
+        var(--subheading-font-transform),
+        var(--subheading-font-size),
+        var(--subheading-font-weigth),
+        var(--subheading-font-family),
+        var(--subheading-font-color)
+    );;
 }
 .post {
     border: 0.3rem solid var(--color-secondary);
@@ -64,7 +70,13 @@
         }
     }
     &__category {
-        @include para;
+        @include text(
+        var(--body-font-transform),
+        var(--body-font-size),
+        var(--body-font-weigth),
+        var(--body-font-family),
+        var(--body-font-color)
+    );;
         font-weight: 600;
         @include respons(phone) {
             text-align: center;
@@ -92,7 +104,13 @@
         margin-bottom: 2rem;
     }
     &__title {
-        @include heading2;
+        @include text(
+        var(--subheading-font-transform),
+        var(--subheading-font-size),
+        var(--subheading-font-weigth),
+        var(--subheading-font-family),
+        var(--subheading-font-color)
+    );;
         @include respons(phone) {
             text-align: center;
         }
@@ -105,14 +123,26 @@
         }
     }
     &__description {
-        @include para;
+        @include text(
+        var(--body-font-transform),
+        var(--body-font-size),
+        var(--body-font-weigth),
+        var(--body-font-family),
+        var(--body-font-color)
+    );;
         @include respons(phone) {
             text-align: center;
         }
         overflow: hidden;
     }
     &__pay-loc {
-        @include para;
+        @include text(
+        var(--body-font-transform),
+        var(--body-font-size),
+        var(--body-font-weigth),
+        var(--body-font-family),
+        var(--body-font-color)
+    );;
         display: flex;
         margin: 0.5rem 0;
         font-weight: 600;
@@ -154,7 +184,13 @@
     }
     &__stat-name {
         align-self: center;
-        @include para;
+        @include text(
+        var(--body-font-transform),
+        var(--body-font-size),
+        var(--body-font-weigth),
+        var(--body-font-family),
+        var(--body-font-color)
+    );;
         color: var(--text-color-dark);
     }
     &__btn-box{
@@ -166,7 +202,13 @@
         color: var(--color-light-1);
         font-weight: 600;
         align-self: center;
-        @include para;
+        @include text(
+        var(--body-font-transform),
+        var(--body-font-size),
+        var(--body-font-weigth),
+        var(--body-font-family),
+        var(--body-font-color)
+    );;
         text-transform: uppercase;
     }
 }

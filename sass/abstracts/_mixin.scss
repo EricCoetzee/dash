@@ -1,57 +1,56 @@
+@mixin textAnimation {
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba(#000, 0.2);
+}
+
 @mixin clrfx {
-    &::after{
-        content: "" ;
-        clear: both ;
-        display: table ;
+    &::after {
+        content: "";
+        clear: both;
+        display: table;
     }
 }
 
 @mixin clrfxBefore {
-    &::before{
-        content: "" ;
-        clear: both ;
-        display: table ;
+    &::before {
+        content: "";
+        clear: both;
+        display: table;
     }
 }
 
-@mixin para {
-    font-size: var(--paragraph) !important;
-    @include respons(tab-port){ 
-        font-size: var(--paragraph-med) !important; 
-    }
-    @include respons(phone){ 
-        font-size: var(--paragraph-small) !important; 
-    }
+@mixin text($transform, $size, $weight, $family, $color, $letterSpacing) {
+    text-transform: $transform;
+    font-size: $size;
+    font-weight: $weight;
+    font-family: $family;
+    color: $color;
+    letter-spacing: $letterSpacing;
+
 }
 
-@mixin heading2 {
-    font-size: var(--heading-2) !important;
-    @include respons(tab-port){ 
-        font-size: var(--heading-2-med) !important; 
-    }
-    @include respons(phone){ 
-        font-size: var(--heading-2-small) !important; 
-    }
-}   
-  
+@mixin textCenter {
+    text-align: center;
+    margin: auto;
+}
+
 @mixin center {
-    position: absolute ;
-    top: 50% ;
-    left: 50% ;
-    transform: translate(-50%, -50%) ;
-    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-
-@mixin flex($justify, $align ) {
-    display: flex ;
-    justify-content: $justify ;
-    align-items: $align ;
+@mixin flex($justify, $align) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
 }
 
 @mixin grid($repeat, $fr) {
-    display: grid ;
+    display: grid;
     grid-template-columns: repeat($repeat, minmax(0, $fr));
+    gap: $gap;
 }
 
 //Media query manager
@@ -69,23 +68,29 @@ Breakpointss
 
 */
 
-
 @mixin phone-size {
-    @media (max-width: 600px) { @content; } 
+    @media (max-width: 600px) {
+        @content;
+    }
 }
 
 @mixin tablet-size {
-    @media (max-width: 900px) { @content; } 
+    @media (max-width: 900px) {
+        @content;
+    }
 }
 
 @mixin tablet-landscape-size {
-    @media (max-width: 1200px) { @content; } 
+    @media (max-width: 1200px) {
+        @content;
+    }
 }
 
 @mixin big-screen-size {
-    @media (max-width: 1800px) { @content; } 
+    @media (max-width: 1800px) {
+        @content;
+    }
 }
-
 
 /* 
 breakpoint choices
@@ -100,38 +105,51 @@ breakpoint choices
 
  */
 
-
- @mixin respons($breakpoint) {  
-
-    @if $breakpoint == small-iphone{
-        @media only screen and (max-width: $bp-small-iphone) { @content; } 
+@mixin respons($breakpoint) {
+    @if $breakpoint == small-iphone {
+        @media only screen and (max-width: $bp-small-iphone) {
+            @content;
+        }
     }
 
-    @if $breakpoint == small{
-        @media only screen and (max-width: $bp-smallest) { @content; } //500px
+    @if $breakpoint == small {
+        @media only screen and (max-width: $bp-smallest) {
+            @content;
+        } //500px
     }
 
-    @if $breakpoint == phone{
-        @media only screen and (max-width: $bp-small) { @content; } //600px
+    @if $breakpoint == phone {
+        @media only screen and (max-width: $bp-small) {
+            @content;
+        } //600px
     }
-    @if $breakpoint == tab-port{
-        @media only screen and (max-width: $bp-med) { @content; } //900px
+    @if $breakpoint == tab-port {
+        @media only screen and (max-width: $bp-med) {
+            @content;
+        } //900px
     }
-    @if $breakpoint == tab-land{
-        @media only screen and (max-width: $bp-large) { @content; } // 1200px
+    @if $breakpoint == tab-land {
+        @media only screen and (max-width: $bp-large) {
+            @content;
+        } // 1200px
     }
-    @if $breakpoint == big-screen{
-        @media only screen and (min-width: $bp-largest) { @content; } //1800px
+    @if $breakpoint == big-screen {
+        @media only screen and (min-width: $bp-largest) {
+            @content;
+        } //1800px
     }
 
-    @if $breakpoint == phone-land{
-        @media screen and (max-height: $bp-smallest) and (max-height: $bp-small)  and (orientation: landscape){ @content; }
+    @if $breakpoint == phone-land {
+        @media screen and (max-height: $bp-smallest) and (max-height: $bp-small) and (orientation: landscape) {
+            @content;
+        }
     }
 
-    @if $breakpoint == small-phone-land{
-        @media screen and (max-height: $bp-small-iphone) and (max-height: $bp-small)  and (orientation: landscape){ @content; }
+    @if $breakpoint == small-phone-land {
+        @media screen and (max-height: $bp-small-iphone) and (max-height: $bp-small) and (orientation: landscape) {
+            @content;
+        }
     }
-   
- }
+}
 
-//  @include respons(tab-port){ padding: 0; } 
+//  @include respons(tab-port){ padding: 0; }

@@ -23,7 +23,13 @@ input {
         color: #555353;
         display: block;
         margin-bottom: 0.5rem;
-        @include para;
+        @include text(
+        var(--body-font-transform),
+        var(--body-font-size),
+        var(--body-font-weigth),
+        var(--body-font-family),
+        var(--body-font-color)
+    );;
         text-align: center;
         
         

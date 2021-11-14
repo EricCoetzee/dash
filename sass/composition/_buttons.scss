@@ -19,7 +19,13 @@
         border-radius: 10rem;
         transition: all 0.2s;
         position: relative;
-        @include para;
+        @include text(
+        var(--body-font-transform),
+        var(--body-font-size),
+        var(--body-font-weigth),
+        var(--body-font-family),
+        var(--body-font-color)
+    );;
         max-width: 12rem;
         //changes for the button
         border: none;
@@ -59,7 +65,13 @@
         color: var(--color-light-1);
         background-color: var(--color-main);
         text-align: center;
-        @include para;
+        @include text(
+        var(--body-font-transform),
+        var(--body-font-size),
+        var(--body-font-weigth),
+        var(--body-font-family),
+        var(--body-font-color)
+    );;
         &::after {
             background-color: var(--color-main);
         }
@@ -69,7 +81,13 @@
         color: var(--color-light-1);
         background-color: var(--status-inprocess);
         text-align: center;
-        @include para;
+        @include text(
+        var(--body-font-transform),
+        var(--body-font-size),
+        var(--body-font-weigth),
+        var(--body-font-family),
+        var(--body-font-color)
+    );;
         &::after {
             background-color: var(--status-inprocess);
         }
@@ -80,7 +98,13 @@
         background-image: var(--gradient-color-5);
         font-size: 1.6rem;
         text-align: center;
-        @include para;
+        @include text(
+        var(--body-font-transform),
+        var(--body-font-size),
+        var(--body-font-weigth),
+        var(--body-font-family),
+        var(--body-font-color)
+    );;
         &::after {
             background-image: var(--gradient-color-4);
         }
