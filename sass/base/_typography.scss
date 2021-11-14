@@ -1,37 +1,52 @@
-.heading-secondary{
-    text-transform: uppercase;
-    font-weight: 600;
+.heading-text {
+    @include text(
+        var(--heading-font-transform),
+        var(--heading-font-size),
+        var(--heading-font-weigth),
+        var(--heading-font-family),
+        var(--heading-font-color),
+        var(--heading-letter-spacing)
+    );
+    transition: all 0.2s;
     background-image: linear-gradient(to right, var(--color-main), var(--color-main-2));
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    letter-spacing: .2rem;
-    transition: all .2s;
-    @include heading2;
-    &--center-auto{
-        text-align: center;
-        margin: auto;
+    letter-spacing: 0.2rem;
+    &--center-auto {
+        @include textCenter;
+        &:hover {
+            @include textAnimation;
+        }
     }
-    &:hover{
-        transform: skewY(2deg) skewX(15deg) scale(1.1);
-        text-shadow: .5rem 1rem 2rem rgba(#000, .20);
-    }
- }
-%heading{
-    /* font-family: var(--my-font-1); */
-    font-weight: 600;
 }
-.heading-2{
-    @extend %heading;
-    font-size: 2rem;
-    text-transform: uppercase;
-    color: var(--color-main);
-    &--light{color:var(--text-color);}
-    &--dark{color:var(--text-color-dark);}
-}    
-.heading-3{
-    @extend %heading;
-    @include para;
-    &--light{color:var(--text-color);}
-    &--dark{color:var(--text-color-dark);}
-}  
+.subheading-text {
+    @include text(
+        var(--subheading-font-transform),
+        var(--subheading-font-size),
+        var(--subheading-font-weigth),
+        var(--subheading-font-family),
+        var(--subheading-font-color),
+        var(--subheading-letter-spacing)
+    );
+}
+.body-text {
+    @include text(
+        var(--body-font-transform),
+        var(--body-font-size),
+        var(--body-font-weigth),
+        var(--body-font-family),
+        var(--body-font-color),
+        var(--body-letter-spacing)
+    );
+}
+.small-text {
+    @include text(
+        var(--body-font-transform),
+        var(--small-font-size),
+        var(--small-font-weigth),
+        var(--body-font-family),
+        var(--body-font-color),
+        var(--body-letter-spacing)
+    );
+}

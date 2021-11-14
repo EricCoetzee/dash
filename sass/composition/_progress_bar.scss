@@ -34,6 +34,13 @@
         &::before {
             counter-increment: step;
             content: counter(step);
+            @include text(
+        var(--body-font-transform),
+        var(--body-font-size),
+        var(--body-font-weigth),
+        var(--body-font-family),
+        var(--body-font-color)
+    );;
         }
         &::after {
             content: attr(data-title);

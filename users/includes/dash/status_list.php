@@ -5,7 +5,7 @@
     if ($page_link[4] === "create_post") {
     ?>
         <form class="post-form" method="POST" action="../forms/post_form.php" enctype="multipart/form-data">
-            <h1 class="heading-secondary heading-secondary--center-auto">Create Post</h1>
+            <h1 class="heading-text heading-text--center-auto">Create Post</h1>
             <!-- Progress bar -->
             <div class="progressbar">
                 <div class="progressbar__progress" id="progress"></div>
@@ -17,8 +17,10 @@
             </div>
             <!-- Steps -->
             <div class="form-step form-step-active">
-                <label class="post-form__label-heading" for="category" class="post-form__label">Scroll for more categories
+                <label class="post-form__label-heading" for="category" class="post-form__label">
                     <div class="valid">
+                        <small>Error Message</small>
+                        <h3 class="heading-2">Scroll for more categories</h3>
                         <select class="cat-select__selected" id="category" name="category" size="5" onclick="checkForm()" onchange="checkForm()">
                             <?php
                             $db = new Database();
@@ -28,7 +30,7 @@
                                 <option value="<?php echo strtolower($row['cat']); ?>"><?php echo $row['cat']; ?></option>
                             <?php } ?>
                         </select>
-                        <small>Error Message</small>
+
                         <svg class="icon-check">
                             <use xlink:href="../../img/svg/sprite.svg#icon-check-circle"></use>
                         </svg>
@@ -38,13 +40,14 @@
                     </div>
                 </label>
                 <div class="">
-                    <a href="javascript:void(0)" onclick="checkForm()" class="btns-group__btn btns-group__btn-next btns-group__btn--one">Next</a>
+                    <a href="javascript:void(0)" class="btns-group__btn btns-group__btn-next btns-group__btn--one">Next</a>
                 </div>
             </div>
             <div class="form-step">
                 <div class="form-step__grid-setup">
-                    <label class="post-form__label-heading" for="gender">Gender
+                    <label class="post-form__label-heading" for="gender">
                         <div class="valid">
+                            <small>Error Message</small>
                             <select class="cat-select__selected--no-bar" onclick="checkForm()" onchange="checkForm()" id="gender" size="3" name="gender">
                                 <?php
                                 $db = new Database();
@@ -54,7 +57,6 @@
                                     <option value="<?php echo strtolower($row['gender']); ?>"><?php echo $row['gender']; ?></option>
                                 <?php } ?>
                             </select>
-                            <small>Error Message</small>
                             <svg class="icon-check">
                                 <use xlink:href="../../img/svg/sprite.svg#icon-check-circle"></use>
                             </svg>
@@ -64,8 +66,9 @@
                         </div>
                     </label>
 
-                    <label class="post-form__label-heading" for="age">Age Group
+                    <label class="post-form__label-heading" for="age">
                         <div class="valid">
+                            <small>Error Message</small>
                             <select class="cat-select__selected--no-bar" onclick="checkForm()" onchange="checkForm()" id="age" name="age" size="3">
                                 <?php
                                 $db = new Database();
@@ -75,7 +78,6 @@
                                     <option value="<?php echo strtolower($row['age_group']); ?>"><?php echo $row['age_group']; ?></option>
                                 <?php } ?>
                             </select>
-                            <small>Error Message</small>
                             <svg class="icon-check">
                                 <use xlink:href="../../img/svg/sprite.svg#icon-check-circle"></use>
                             </svg>
@@ -85,13 +87,21 @@
                         </div>
                     </label>
                 </div>
-                <div class="form__group">
-                    <input type="url" name="yurl" placeholder="Youtube URL" id="yurl" class="form__input">
+                <div class="form__group valid">
+                    <small>Error Message</small>
+                    <input type="url" name="yurl" placeholder="Youtube URL" onkeyup="validCategory()" id="yurl" class="form__input">
                     <label for="yurl" class="form__label">Youtube URL</label>
+
+                    <svg class="icon-check">
+                        <use xlink:href="../../img/svg/sprite.svg#icon-check-circle"></use>
+                    </svg>
+                    <svg class="icon-exclamation">
+                        <use xlink:href="../../img/svg/sprite.svg#icon-info-with-circle"></use>
+                    </svg>
                 </div>
                 <div class="btns-group">
                     <a href="javascript:void(0)" class="btns-group__btn btns-group__btn-prev">Previous</a>
-                    <a href="javascript:void(0)" onclick="checkForm()" class="btns-group__btn btns-group__btn-next">Next</a>
+                    <a href="javascript:void(0)" class="btns-group__btn btns-group__btn-next">Next</a>
                 </div>
             </div>
             <div class="form-step">
@@ -174,14 +184,6 @@
                     <div><input type="submit" value="Submit" class="btns-group__btn" /></div>
                 </div>
             </div>
-
-            <!-- <div class="indicator">
-                <div class="valid">
-                    <div id="postBottomMsg"></div>
-                    <small id="post-top-indication" style="font-size: 1.5rem; color:#fff; background-color:firebrick; padding:10px; width:100%; text-align:center;">Error Message</small>
-                </div>
-            </div> -->
-
         </form>
     <?php } ?>
 </div>
