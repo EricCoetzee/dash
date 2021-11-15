@@ -4,7 +4,8 @@
         var(--subheading-font-size),
         var(--subheading-font-weigth),
         var(--subheading-font-family),
-        var(--subheading-font-color)
+        var(--subheading-font-color),
+        var(--body-font-spacing)
     );;
 }
 .post {
@@ -75,7 +76,8 @@
         var(--body-font-size),
         var(--body-font-weigth),
         var(--body-font-family),
-        var(--body-font-color)
+        var(--body-font-color),
+        var(--body-font-spacing)
     );;
         font-weight: 600;
         @include respons(phone) {
@@ -109,7 +111,8 @@
         var(--subheading-font-size),
         var(--subheading-font-weigth),
         var(--subheading-font-family),
-        var(--subheading-font-color)
+        var(--subheading-font-color),
+        var(--body-font-spacing)
     );;
         @include respons(phone) {
             text-align: center;
@@ -128,7 +131,9 @@
         var(--body-font-size),
         var(--body-font-weigth),
         var(--body-font-family),
-        var(--body-font-color)
+        var(--body-font-color),
+        var(--body-font-spacing)
+
     );;
         @include respons(phone) {
             text-align: center;
@@ -141,7 +146,8 @@
         var(--body-font-size),
         var(--body-font-weigth),
         var(--body-font-family),
-        var(--body-font-color)
+        var(--body-font-color),
+        var(--body-font-spacing)
     );;
         display: flex;
         margin: 0.5rem 0;
@@ -189,7 +195,8 @@
         var(--body-font-size),
         var(--body-font-weigth),
         var(--body-font-family),
-        var(--body-font-color)
+        var(--body-font-color),
+        var(--body-font-spacing)
     );;
         color: var(--text-color-dark);
     }
@@ -207,7 +214,8 @@
         var(--body-font-size),
         var(--body-font-weigth),
         var(--body-font-family),
-        var(--body-font-color)
+        var(--body-font-color),
+        var(--body-font-spacing)
     );;
         text-transform: uppercase;
     }

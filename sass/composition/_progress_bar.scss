@@ -35,12 +35,13 @@
             counter-increment: step;
             content: counter(step);
             @include text(
-        var(--body-font-transform),
-        var(--body-font-size),
-        var(--body-font-weigth),
-        var(--body-font-family),
-        var(--body-font-color)
-    );;
+                var(--body-font-transform),
+                var(--body-font-size),
+                var(--body-font-weigth),
+                var(--body-font-family),
+                var(--body-font-color),
+                var(--body-font-spacing)
+            );
         }
         &::after {
             content: attr(data-title);
@@ -53,7 +54,10 @@
     &__progress-step-active {
         background-image: linear-gradient(to right bottom, var(--color-main), var(--color-main-2)),
             url(../../img/svg/spinner6.svg);
-        color: #f3f3f3;
+        
         font-size: 200%;
+        &::before{
+           color: var(--color-light-1) !important; 
+        }
     }
 }

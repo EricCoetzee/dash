@@ -1,6 +1,6 @@
 <?php include('../../includes/db/init.php') ?>
 <div class="details__recent-activities__header">
-    <h2 class="heading-secondary">Recent Activities</h2>
+    <h2 class="heading-text">Recent Activities</h2>
     <a href="" class="bttn bttn--blue">View All</a>
 </div>
 <table class="details__recent-activities__table">

@@ -28,7 +28,8 @@ input {
         var(--body-font-size),
         var(--body-font-weigth),
         var(--body-font-family),
-        var(--body-font-color)
+        var(--body-font-color),
+        var(--body-font-spacing)
     );;
         text-align: center;
         
@@ -66,8 +67,8 @@ input {
     &__post-description {
         margin: 0px;
         width: 100%;
-        padding-top: 1.5rem;
-        height: 182px;
+        padding-top: 2.8rem;
+        height: 20rem;
     }
 }
 

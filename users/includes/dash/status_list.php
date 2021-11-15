@@ -30,7 +30,6 @@
                                 <option value="<?php echo strtolower($row['cat']); ?>"><?php echo $row['cat']; ?></option>
                             <?php } ?>
                         </select>
-
                         <svg class="icon-check">
                             <use xlink:href="../../img/svg/sprite.svg#icon-check-circle"></use>
                         </svg>
@@ -65,7 +64,6 @@
                             </svg>
                         </div>
                     </label>
-
                     <label class="post-form__label-heading" for="age">
                         <div class="valid">
                             <small>Error Message</small>
@@ -89,9 +87,37 @@
                 </div>
                 <div class="form__group valid">
                     <small>Error Message</small>
-                    <input type="url" name="yurl" placeholder="Youtube URL" onkeyup="validCategory()" id="yurl" class="form__input">
-                    <label for="yurl" class="form__label">Youtube URL</label>
+                    <input type="url" name="yurl" placeholder="Youtube URL" onkeyup="checkForm()" id="yurl" class="form__input">
+                    <label for="yurl" class="form__label" id="yLabel">Youtube URL</label>
+                    <svg class="icon-check">
+                        <use xlink:href="../../img/svg/sprite.svg#icon-check-circle"></use>
+                    </svg>
+                    <svg class="icon-exclamation">
+                        <use xlink:href="../../img/svg/sprite.svg#icon-info-with-circle"></use>
+                    </svg>
+                </div>
+                <div class="btns-group">
+                    <a href="javascript:void(0)" class="btns-group__btn btns-group__btn-prev">Previous</a>
+                    <a href="javascript:void(0)" class="btns-group__btn btns-group__btn-next">Next</a>
+                </div>
+            </div>
+            <div class="form-step ">
 
+                <div class="form__group valid">
+                    <small>Error Message</small>
+                    <input type="text" minlength="5" onkeyup="checkForm()" class="form__input" placeholder="Title" name="title" id="title" />
+                    <label class="form__label" for="title">Title</label>
+                    <svg class="icon-check">
+                        <use xlink:href="../../img/svg/sprite.svg#icon-check-circle"></use>
+                    </svg>
+                    <svg class="icon-exclamation">
+                        <use xlink:href="../../img/svg/sprite.svg#icon-info-with-circle"></use>
+                    </svg>
+                </div>
+                <div class="form__group valid">
+                    <small>Error Message</small>
+                    <textarea type="text" minlength="20" onkeyup="checkForm()" name="description" id="description" class="input-group__post-description form__input" placeholder="Description"></textarea>
+                    <label class="form__label" for="description">Description</label>
                     <svg class="icon-check">
                         <use xlink:href="../../img/svg/sprite.svg#icon-check-circle"></use>
                     </svg>
@@ -105,21 +131,9 @@
                 </div>
             </div>
             <div class="form-step">
-                <div class="form__group">
-                    <input type="text" minlength="4" class="form__input" placeholder="Title" name="title" id="title" />
-                    <label class="form__label" for="title">Title</label>
-                </div>
-                <div class="form__group">
-                    <textarea type="text" minlength="20" name="description" id="description" class="input-group__post-description form__input" placeholder="Description"></textarea>
-                    <label class="form__label" for="description">Description</label>
-                </div>
-                <div class="btns-group">
-                    <a href="javascript:void(0)" class="btns-group__btn btns-group__btn-prev">Previous</a>
-                    <a href="javascript:void(0)" class="btns-group__btn btns-group__btn-next">Next</a>
-                </div>
-            </div>
-            <div class="form-step">
-                <label class="post-form__label-heading">Add Images</label>
+                <label class="post-form__label-heading">
+                    <h3 class="heading-2">Add Images</h3>
+                </label>
                 <div class="form-step__img-upload-section">
                     <?php
                     for ($x = 1; $x <= 4; $x++) {
@@ -162,21 +176,25 @@
             <div class="form-step">
                 <div class="input-group">
                     <div class="user-info">
-                        <label class="post-form__label-heading" for="user-info">Display User Info
+                        <label class="post-form__label-heading" for="user-info">
+                            <h3 class="heading-2">Display User Info</h3>
                             <input type="checkbox" name="user-info" id="user-info" value="yes">
                         </label>
-                        <label class="post-form__label-heading" for="user-comments">Allow Social
+                        <label class="post-form__label-heading" for="user-comments">
+                            <h3 class="heading-2">Allow Social</h3>
                             <input type="checkbox" name="user-comments" id="user-comments" value="yes">
                         </label>
                     </div>
-                    <div class="form__group">
-                        <input type="url" name="additional-links" class="form__input" placeholder="Website" id="additional-links" />
+                    <div class="form__group valid">
+                        <small>Error Message</small> 
+                        <input type="url" name="additional-links" onkeyup="checkForm()" class="form__input" placeholder="Website" id="additionalUrl" />
                         <label class="form__label" for="additional-links">Website</label>
-                    </div>
-                </div>
-                <div class="input-group">
-                    <div class="center">
-                        <!-- <input type="checkbox" name=""> Show User Info -->
+                        <svg class="icon-check">
+                            <use xlink:href="../../img/svg/sprite.svg#icon-check-circle"></use>
+                        </svg>
+                        <svg class="icon-exclamation">
+                            <use xlink:href="../../img/svg/sprite.svg#icon-info-with-circle"></use>
+                        </svg>
                     </div>
                 </div>
                 <div class="btns-group">

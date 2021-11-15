@@ -24,7 +24,9 @@
         var(--body-font-size),
         var(--body-font-weigth),
         var(--body-font-family),
-        var(--body-font-color)
+        var(--body-font-color),
+        var(--body-font-spacing)
+
     );;
         max-width: 12rem;
         //changes for the button
@@ -70,7 +72,8 @@
         var(--body-font-size),
         var(--body-font-weigth),
         var(--body-font-family),
-        var(--body-font-color)
+        var(--body-font-color),
+        var(--body-font-spacing)
     );;
         &::after {
             background-color: var(--color-main);
@@ -86,7 +89,8 @@
         var(--body-font-size),
         var(--body-font-weigth),
         var(--body-font-family),
-        var(--body-font-color)
+        var(--body-font-color),
+        var(--body-font-spacing)
     );;
         &::after {
             background-color: var(--status-inprocess);
@@ -103,7 +107,8 @@
         var(--body-font-size),
         var(--body-font-weigth),
         var(--body-font-family),
-        var(--body-font-color)
+        var(--body-font-color),
+        var(--body-font-spacing)
     );;
         &::after {
             background-image: var(--gradient-color-4);
@@ -131,7 +136,6 @@
 .btns-group {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    align-items: center;
     gap: 1.5rem;
 
     &__btn {

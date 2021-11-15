@@ -9,11 +9,10 @@
         var(--body-font-size),
         var(--body-font-weigth),
         var(--body-font-family),
-        var(--body-font-color)
+        var(--body-font-color),
+        var(--body-font-spacing)
     );;
        padding: 1rem 0 0 1.5rem;
-       font-family: inherit;
-       color: inherit;
        height: 5rem;
        border-radius: 2px;
        background-color: rgba(0,0,0,.07);
@@ -26,9 +25,6 @@
            outline: none;
            box-shadow: 0 1rem 2rem rgba(0, 0, 0, .1);
            border-bottom: 3px solid var(--color-danger) ;
-           &:valid{
-               border-bottom: 3px solid var(--color-success) ;
-           }
        }
        &::-webkit-input-placeholder{
            color: #555353;
@@ -36,7 +32,7 @@
     }
     &__label{
         position: absolute;
-        top: 3.2rem;
+        top: 2.6rem;
         left: 0;
         color: #555353;
        font-size: 1.2rem;

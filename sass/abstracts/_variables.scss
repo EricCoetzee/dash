@@ -53,12 +53,18 @@
   --heading-font-color: #222;
   --subheading-font-color: #2f4f4f;
   --body-font-color: #5b6770;
+  --body-font-color-ligth: #fff;
 
   // Text transform
   --heading-font-transform: uppercase;
   --subheading-font-transform: capitalize;
   --body-font-transform: none;
- 
+
+//  Letter Spacing
+
+--heading-font-spacing: 0.2rem;
+--subheading-font-spacing: 0.1rem;
+--body-font-spacing: 0rem;
   
 /* ************************************************************************************* */
   // button text color

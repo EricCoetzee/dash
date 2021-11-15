@@ -8,9 +8,9 @@ if (isset($_COOKIE['EzeeMax']) && isset($_COOKIE['ezeemaxMail']) && isset($_COOK
     $user = $_SESSION['username'];
 }?>
     <div class="details__recent-activities__header">
-        <h2 class="heading-secondary">Recent Notification</h2>
+        <h2 class="heading-text">Recent Notification</h2>
         <a href="" class="bttn bttn--main">View All</a>
-    </div>
+    </div>  
     <table class="details__recent-activities__table">
         <thead class="details__recent-activities__table__head">
             <tr class="details__recent-activities__table__head__row">

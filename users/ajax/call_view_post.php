@@ -1,7 +1,7 @@
 <?php include('../../includes/db/init.php') ?>
 <div class="post-view-container">
     <div class="details__recent-activities__header">
-        <h2 class="heading-secondary">Recent Post</h2>
+        <h2 class="heading-text">Recent Post</h2>
         <a href="" class="bttn bttn--blue">View All</a>
     </div>
     <?php
